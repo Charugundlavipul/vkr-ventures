@@ -194,15 +194,13 @@ export default function Home() {
               <div className="grid justify-items-center gap-5">
                 <span className={`${label} text-paper/72`}>VKR Ventures</span>
 
-                <h1 className="max-w-[11ch] font-display text-[clamp(3rem,6.2vw,5.2rem)] leading-[0.92] tracking-[-0.04em] text-[#fff8ee] text-balance">
-                  Smokies Stays.
-                  <br />
-                  Sharper Standards.
+                <h1 className="max-w-[16ch] font-display text-[clamp(3rem,6.2vw,5.2rem)] leading-[0.92] tracking-[-0.04em] text-[#fff8ee] text-balance">
+                  Turning Properties into Trusted Stays
                 </h1>
 
                 <p className="max-w-[42rem] text-[clamp(1rem,1.7vw,1.08rem)] leading-[1.8] text-[#fff8ee]/82">
-                  VKR Ventures acquires and operates short-term rentals across Sevier County
-                  with disciplined operations, stronger presentation, and guest-ready stays.
+                  Based in Sevierville, VKR Ventures focuses on guest-ready properties,
+                  disciplined operations, and better-performing stays across Sevier County.
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4 max-md:w-full">
