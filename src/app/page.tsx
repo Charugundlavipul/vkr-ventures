@@ -193,8 +193,13 @@ export default function Home() {
             <div className="relative z-[3] grid min-h-[clamp(680px,88svh,860px)] place-items-center py-24 text-center max-md:min-h-[clamp(620px,82svh,760px)] max-md:py-20">
               <div className="grid justify-items-center gap-6">
                 <h1 className="max-w-none font-display text-[clamp(3rem,6.2vw,5.2rem)] leading-[0.94] tracking-[-0.04em] text-[#fff8ee] text-balance md:whitespace-nowrap">
-                  VKR Ventures
+                  Cabin Stays, Run Right.
                 </h1>
+
+                <p className="max-w-[42rem] text-[clamp(1rem,1.7vw,1.08rem)] leading-[1.8] text-[#fff8ee]/82">
+                  VKR Ventures acquires and operates Smokies short-term rentals with sharper
+                  standards, cleaner execution, and guest-ready stays.
+                </p>
 
                 <div className="flex flex-wrap justify-center gap-4 max-md:w-full">
                   <a className={`${primaryButton} max-md:w-full`} href="#focus">
