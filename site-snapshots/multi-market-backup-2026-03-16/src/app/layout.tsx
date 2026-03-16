@@ -15,9 +15,9 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "VKR Ventures | Tennessee Short-Term Rentals",
+  title: "VKR Ventures | Tennessee and Charlotte Rental Ventures",
   description:
-    "VKR Ventures LLC focuses on short-term rental management and vacation rental opportunities across Sevierville and the Smoky Mountains of Tennessee.",
+    "VKR Ventures LLC focuses on short-term and long-term rental opportunities across Sevierville, the Smokies, and the Charlotte region.",
 };
 
 export default function RootLayout({
@@ -26,13 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${cormorantGaramond.variable} ${jost.variable}`}
-        suppressHydrationWarning
-      >
-        {children}
-      </body>
+    <html lang="en">
+      <body className={`${cormorantGaramond.variable} ${jost.variable}`}>{children}</body>
     </html>
   );
 }

@@ -8,16 +8,16 @@ const officeCards = [
     detail: "Sevierville, TN 37862",
   },
   {
-    label: "Service area",
-    title: "Sevier County and the Smokies",
-    detail: "Sevierville, Pigeon Forge, Gatlinburg, and Wears Valley",
+    label: "Charlotte-region mailing",
+    title: "2357 Herrons Nest Pl NW",
+    detail: "Concord, NC 28027",
   },
 ];
 
 const serviceNotes = [
   "Short-term property management",
-  "Cabin and vacation rental operations",
-  "Smoky Mountains guest-ready stays",
+  "Long-term property management",
+  "Smokies and Charlotte-region properties",
 ];
 
 const navItems = [
@@ -31,7 +31,8 @@ const navItems = [
 const shell =
   "mx-auto w-[min(1180px,calc(100vw-48px))] max-md:w-[min(1180px,calc(100vw-32px))]";
 const label = "text-[0.72rem] uppercase tracking-[0.2em] leading-[1.3]";
-const title = "font-display font-medium leading-[1.02] tracking-[-0.04em]";
+const title =
+  "font-display font-medium leading-[1.02] tracking-[-0.04em]";
 const copy = "text-[clamp(1rem,1.8vw,1.08rem)] leading-[1.85]";
 const card =
   "rounded-[1.2rem] border border-ink/8 bg-white/90 shadow-[0_28px_60px_rgba(24,19,14,0.08)]";
@@ -58,11 +59,11 @@ export default function ContactPage() {
             <div className="relative z-[1] grid min-h-[26rem] content-center gap-5 py-[3.75rem] text-paper max-md:min-h-96">
               <p className={`${label} text-paper/82`}>Contact Us</p>
               <h1 className={`${title} max-w-[12ch] text-[clamp(3rem,6vw,4.8rem)] text-balance`}>
-                Talk to VKR Ventures.
+                Contact VKR Ventures.
               </h1>
               <p className={`${copy} max-w-[38rem] text-paper/76`}>
-                Tell us if you need short-term rental management in Sevierville, Pigeon Forge,
-                Gatlinburg, or nearby Smoky Mountains markets.
+                Tell us if you need short-term or long-term property management in the Smokies or
+                the Charlotte region.
               </p>
             </div>
           </div>
@@ -86,12 +87,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
                     <label className="grid gap-[0.6rem]">
                       <span className={`${label} text-ink/54`}>Full name</span>
-                      <input
-                        className={`${inputBase} min-h-[3.25rem]`}
-                        name="name"
-                        placeholder="Your name"
-                        type="text"
-                      />
+                      <input className={`${inputBase} min-h-[3.25rem]`} name="name" placeholder="Your name" type="text" />
                     </label>
 
                     <label className="grid gap-[0.6rem]">
@@ -127,9 +123,9 @@ export default function ContactPage() {
                           <option value="" disabled>
                             Select a service
                           </option>
-                          <option value="management">Short-term property management</option>
-                          <option value="listings">Listing optimization and pricing</option>
-                          <option value="operations">Guest operations and turnover</option>
+                          <option value="short-term">Short-term property management</option>
+                          <option value="long-term">Long-term property management</option>
+                          <option value="both">Both</option>
                         </select>
                         <span className="pointer-events-none absolute right-5 top-1/2 h-[0.55rem] w-[0.55rem] -translate-y-[60%] rotate-45 border-b-[1.5px] border-r-[1.5px] border-ink/54" />
                       </div>
@@ -151,7 +147,7 @@ export default function ContactPage() {
                     <textarea
                       className={`${inputBase} min-h-40 resize-y`}
                       name="message"
-                      placeholder="Tell us about the stay, the property, and what kind of short-term rental help you need."
+                      placeholder="Tell us about the property, current use, and what help you need."
                       rows={7}
                     />
                   </label>
@@ -172,8 +168,8 @@ export default function ContactPage() {
                     VKR Ventures LLC
                   </h2>
                   <p className={`${copy} text-ink/70`}>
-                    Short-term rental management focused on Sevierville, Pigeon Forge, Gatlinburg,
-                    and nearby Smoky Mountains markets.
+                    Property management focused on short-term and long-term rentals across
+                    Tennessee and the Charlotte region.
                   </p>
 
                   <div className="grid gap-4">
@@ -213,7 +209,7 @@ export default function ContactPage() {
           <div className="flex flex-wrap justify-between gap-x-6 gap-y-4 text-[0.78rem] uppercase tracking-[0.18em] text-paper/46 max-md:justify-start">
             <span>VKR Ventures LLC</span>
             <span>Sevierville, Tennessee</span>
-            <span>Smoky Mountains short-term rentals</span>
+            <span>Charlotte region</span>
           </div>
         </div>
       </footer>
