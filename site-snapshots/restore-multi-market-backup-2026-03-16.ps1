@@ -13,6 +13,9 @@ if (Test-Path (Join-Path $repoRoot "src")) {
 
 Copy-Item -Recurse -Force (Join-Path $snapshotRoot "src") $repoRoot
 Copy-Item -Force `
+  (Join-Path $snapshotRoot ".gitignore"), `
+  (Join-Path $snapshotRoot ".env.example"), `
+  (Join-Path $snapshotRoot "EMAILJS_SETUP.md"), `
   (Join-Path $snapshotRoot "package.json"), `
   (Join-Path $snapshotRoot "package-lock.json"), `
   (Join-Path $snapshotRoot "postcss.config.mjs"), `

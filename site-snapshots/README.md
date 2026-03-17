@@ -11,6 +11,9 @@ powershell -ExecutionPolicy Bypass -File .\site-snapshots\restore-multi-market-b
 That script restores:
 
 - `src`
+- `.gitignore`
+- `.env.example`
+- `EMAILJS_SETUP.md`
 - `package.json`
 - `package-lock.json`
 - `postcss.config.mjs`

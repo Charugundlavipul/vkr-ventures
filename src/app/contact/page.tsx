@@ -1,3 +1,4 @@
+import { ContactInquiryForm } from "../../components/contact-inquiry-form";
 import { Reveal } from "../../components/reveal";
 import { SiteNav } from "../../components/site-nav";
 
@@ -35,8 +36,6 @@ const title = "font-display font-medium leading-[1.02] tracking-[-0.04em]";
 const copy = "text-[clamp(1rem,1.8vw,1.08rem)] leading-[1.85]";
 const card =
   "rounded-[1.2rem] border border-ink/8 bg-white/90 shadow-[0_28px_60px_rgba(24,19,14,0.08)]";
-const inputBase =
-  "w-full rounded-[0.9rem] border border-ink/12 bg-[#fcfaf6] px-4 py-[0.95rem] text-ink transition duration-200 focus:border-[rgba(101,68,33,0.42)] focus:bg-white focus:outline-none focus:ring-4 focus:ring-[rgba(167,123,74,0.12)]";
 
 export default function ContactPage() {
   return (
@@ -57,8 +56,8 @@ export default function ContactPage() {
           <div className={shell}>
             <div className="relative z-[1] grid min-h-[26rem] content-center gap-5 py-[3.75rem] text-paper max-md:min-h-96">
               <p className={`${label} text-paper/82`}>Contact Us</p>
-              <h1 className={`${title} max-w-[12ch] text-[clamp(3rem,6vw,4.8rem)] text-balance`}>
-                Talk to VKR Ventures.
+              <h1 className={`${title} max-w-[18ch] text-[clamp(3rem,6vw,4.8rem)] text-balance`}>
+                Tell us what you need and we'll get back to you.
               </h1>
               <p className={`${copy} max-w-[38rem] text-paper/76`}>
                 Tell us if you need short-term rental management in Sevierville, Pigeon Forge,
@@ -82,87 +81,7 @@ export default function ContactPage() {
                   Share the basics below so the conversation starts in the right lane.
                 </p>
 
-                <form className="mt-2 grid gap-4">
-                  <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-                    <label className="grid gap-[0.6rem]">
-                      <span className={`${label} text-ink/54`}>Full name</span>
-                      <input
-                        className={`${inputBase} min-h-[3.25rem]`}
-                        name="name"
-                        placeholder="Your name"
-                        type="text"
-                      />
-                    </label>
-
-                    <label className="grid gap-[0.6rem]">
-                      <span className={`${label} text-ink/54`}>Email</span>
-                      <input
-                        className={`${inputBase} min-h-[3.25rem]`}
-                        name="email"
-                        placeholder="you@example.com"
-                        type="email"
-                      />
-                    </label>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-                    <label className="grid gap-[0.6rem]">
-                      <span className={`${label} text-ink/54`}>Phone</span>
-                      <input
-                        className={`${inputBase} min-h-[3.25rem]`}
-                        name="phone"
-                        placeholder="Optional"
-                        type="tel"
-                      />
-                    </label>
-
-                    <label className="grid gap-[0.6rem]">
-                      <span className={`${label} text-ink/54`}>Service needed</span>
-                      <div className="relative">
-                        <select
-                          className={`${inputBase} min-h-[3.25rem] appearance-none pr-12`}
-                          defaultValue=""
-                          name="service"
-                        >
-                          <option value="" disabled>
-                            Select a service
-                          </option>
-                          <option value="management">Short-term property management</option>
-                          <option value="listings">Listing optimization and pricing</option>
-                          <option value="operations">Guest operations and turnover</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-5 top-1/2 h-[0.55rem] w-[0.55rem] -translate-y-[60%] rotate-45 border-b-[1.5px] border-r-[1.5px] border-ink/54" />
-                      </div>
-                    </label>
-                  </div>
-
-                  <label className="grid gap-[0.6rem]">
-                    <span className={`${label} text-ink/54`}>Property location</span>
-                    <input
-                      className={`${inputBase} min-h-[3.25rem]`}
-                      name="location"
-                      placeholder="City, area, or property address"
-                      type="text"
-                    />
-                  </label>
-
-                  <label className="grid gap-[0.6rem]">
-                    <span className={`${label} text-ink/54`}>Message</span>
-                    <textarea
-                      className={`${inputBase} min-h-40 resize-y`}
-                      name="message"
-                      placeholder="Tell us about the stay, the property, and what kind of short-term rental help you need."
-                      rows={7}
-                    />
-                  </label>
-
-                  <button
-                    className="inline-flex min-w-48 justify-center justify-self-start rounded-full border border-ink/14 bg-ink px-[1.45rem] py-4 text-[0.8rem] uppercase tracking-[0.18em] text-paper transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[2px] hover:bg-[#211b16] hover:shadow-[0_16px_34px_rgba(23,20,17,0.18)] focus:outline-none focus:ring-4 focus:ring-[rgba(167,123,74,0.18)] max-md:w-full max-md:justify-self-stretch"
-                    type="button"
-                  >
-                    Submit inquiry
-                  </button>
-                </form>
+                <ContactInquiryForm />
               </Reveal>
 
               <Reveal className="grid gap-4" delay={120} distance="right">
