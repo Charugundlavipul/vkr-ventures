@@ -96,6 +96,16 @@ export default function ContactPage() {
                   </p>
 
                   <div className="grid gap-4">
+                    <article className="grid gap-2 pt-1">
+                      <span className={`${label} text-ink/48`}>Direct Contact</span>
+                      <strong className={`${title} text-[1.6rem] text-ink`}>
+                        <a href="tel:7047801369" className="hover:opacity-70 transition-opacity">704-780-1369</a>
+                      </strong>
+                      <span className={`${copy} text-ink/68`}>
+                        <a href="mailto:support@vkr-ventures.com" className="hover:opacity-70 transition-opacity">support@vkr-ventures.com</a>
+                      </span>
+                    </article>
+
                     {officeCards.map((office) => (
                       <article className="grid gap-2 pt-1" key={office.title}>
                         <span className={`${label} text-ink/48`}>{office.label}</span>
