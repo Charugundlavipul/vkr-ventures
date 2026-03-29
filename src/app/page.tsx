@@ -286,13 +286,15 @@ export default function Home() {
 
               <Reveal className="grid content-start gap-4 pt-1" delay={120} distance="right">
                 <p className={`${label} text-ink/52`}>About VKR</p>
-                <h2 className={`${title} max-w-[17ch]`}>Based in Sevierville, with a Charlotte-region footprint.</h2>
+                <h2 className={`${title} max-w-[24ch]`}>
+                  Based in Sevierville, with a Charlotte-region footprint.
+                </h2>
                 <div className="grid gap-4">
-                  <p className={`${copy} max-w-[34rem] leading-[1.75] text-ink/76`}>
+                  <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
                     VKR Ventures is a rental-focused business operating from Sevierville,
                     Tennessee, with a Charlotte-region presence through Concord, North Carolina.
                   </p>
-                  <p className={`${copy} max-w-[34rem] leading-[1.75] text-ink/76`}>
+                  <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
                     The focus stays on short-term stays in tourism-driven areas and long-term
                     rentals in neighborhoods with durable demand.
                   </p>
@@ -450,7 +452,7 @@ export default function Home() {
               </Link>
             </Reveal>
 
-            <div className="grid grid-cols-4 gap-4 max-xl:grid-cols-1 max-lg:grid-cols-2 max-md:grid-cols-1">
+            <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
               {marketNotes.map((note, index) => (
                 <Reveal
                   as="article"
