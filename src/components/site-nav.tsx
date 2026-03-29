@@ -49,12 +49,7 @@ export function SiteNav({ brandHref, items }: SiteNavProps) {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-white/12 bg-background/55 backdrop-blur-[22px]">
-      <div
-        className={cn(
-          shell,
-          "flex items-center justify-between gap-8 py-[1.15rem] max-md:relative max-md:flex max-md:py-4",
-        )}
-      >
+      <div className={cn(shell, "flex items-center justify-between gap-8 py-[1.15rem] max-md:grid max-md:gap-3 max-md:py-4")}>
         <div className="flex w-full items-center justify-between gap-4">
           <Link className="inline-flex items-center" href={brandHref} onClick={closeMenu}>
             <Image
@@ -87,14 +82,14 @@ export function SiteNav({ brandHref, items }: SiteNavProps) {
 
         <div
           className={cn(
-            "flex max-md:absolute max-md:left-0 max-md:right-0 max-md:top-[calc(100%+0.75rem)] max-md:z-50 max-md:px-0 max-md:transition-[opacity,transform] max-md:duration-300 max-md:ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "flex max-md:grid max-md:overflow-hidden max-md:transition-[grid-template-rows,opacity] max-md:duration-300 max-md:ease-[cubic-bezier(0.22,1,0.36,1)]",
             menuOpen
-              ? "max-md:pointer-events-auto max-md:translate-y-0 max-md:opacity-100"
-              : "max-md:pointer-events-none max-md:-translate-y-2 max-md:opacity-0",
+              ? "max-md:[grid-template-rows:1fr] max-md:opacity-100"
+              : "max-md:[grid-template-rows:0fr] max-md:opacity-0",
           )}
           id="site-nav-links"
         >
-          <div className="flex items-center gap-6 max-md:grid max-md:w-full max-md:gap-1 max-md:rounded-[1.2rem] max-md:border max-md:border-white/12 max-md:bg-background/92 max-md:p-4 max-md:shadow-[0_24px_48px_rgba(0,0,0,0.24)]">
+          <div className="flex items-center gap-6 max-md:grid max-md:gap-1 max-md:rounded-[1.2rem] max-md:border max-md:border-white/12 max-md:bg-background/88 max-md:p-4 max-md:shadow-[0_24px_48px_rgba(0,0,0,0.18)]">
             {items.map((item) => (
               <Link
                 aria-current={item.current ? "page" : undefined}

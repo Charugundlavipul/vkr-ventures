@@ -4,44 +4,44 @@ import { SiteNav } from "../components/site-nav";
 
 const overviewFacts = [
   { label: "Base", value: "Sevierville, Tennessee" },
-  { label: "Market", value: "Sevier County and the Smokies" },
-  { label: "Focus", value: "Short-term rental management" },
-  { label: "Approach", value: "Guest-ready operations and selective acquisitions" },
+  { label: "Regional Reach", value: "Charlotte region through Concord" },
+  { label: "Focus", value: "Short-term and long-term property management" },
+  { label: "Approach", value: "Selective acquisitions and steady operations" },
 ];
 
 const pillars = [
   {
-    title: "Cabin and stay acquisitions",
+    title: "Short-term rental acquisitions",
     description:
-      "Tourism-facing properties with room for stronger presentation, cleaner turnover, and better guest appeal.",
+      "Tourism-facing assets with room for better listing quality, cleaner service execution, and stronger revenue management.",
   },
   {
-    title: "Guest-ready operations",
+    title: "Long-term rental positioning",
     description:
-      "Housekeeping, maintenance coordination, check-in quality, and review-driven standards that keep vacation rentals dependable.",
+      "Neighborhood-driven housing where lease durability, product fit, and practical operations matter more than broad market headlines.",
   },
   {
-    title: "Revenue and listing management",
+    title: "Hold-focused operations",
     description:
-      "Calendar strategy, pricing, and listing quality built to improve occupancy without losing stay quality.",
+      "A management approach built around occupancy resilience, vendor consistency, clean standards, and durable ownership decisions.",
   },
 ];
 
 const principles = [
   {
-    title: "Guest experience first",
+    title: "Cash flow over noise",
     copy:
-      "Short-term rentals only work when the stay feels clean, smooth, and worth recommending. That standard comes first.",
+      "The first question is whether the asset can work operationally and financially. Everything visual comes after that.",
   },
   {
-    title: "Smokies market focus",
+    title: "Regional conviction",
     copy:
-      "Sevierville, Pigeon Forge, Gatlinburg, and nearby mountain corridors each need practical operating decisions, not generic hospitality talk.",
+      "Sevierville and the Charlotte region call for different playbooks. The business is designed to respect that difference.",
   },
   {
-    title: "Built for repeat bookings",
+    title: "Built to hold",
     copy:
-      "The goal is not just occupied nights. It is better reviews, cleaner execution, and stays that keep guests coming back.",
+      "This is not churn for the sake of activity. The goal is to own better, operate better, and let disciplined holds compound.",
   },
 ];
 
@@ -65,49 +65,49 @@ const portfolioProfiles = [
     image: "/images/asset-parkway.png",
   },
   {
-    type: "Short-term rental",
-    title: "Ridge View Retreat Homes",
-    location: "Wears Valley and Townsend edge",
+    type: "Long-term rental",
+    title: "Charlotte Corporate Townhomes",
+    location: "South End, NoDa, Plaza Midwood",
     description:
-      "Larger-format mountain stays built around views, group travel, and guest expectations that rise with nightly rate.",
-    detail: "Stay lens: presentation quality, amenity clarity, and dependable pre-arrival execution.",
-    image: "/images/hero-ridge.png",
+      "Townhome-style rentals suited to relocation demand, neighborhood identity, and long-term stability in strong submarkets.",
+    detail: "Hold lens: stable lease demand, durable finishes, neighborhood-level fit.",
+    image: "/images/asset-charlotte.png",
   },
   {
-    type: "Short-term rental",
-    title: "Gatlinburg Guest Lodges",
-    location: "Gatlinburg and nearby cabin clusters",
+    type: "Long-term rental",
+    title: "Concord Family Rentals",
+    location: "Charlotte metro north",
     description:
-      "Vacation rental inventory designed for drive-to tourism, attraction access, and strong weekend conversion.",
-    detail: "Booking lens: occupancy control, sharper merchandising, and cleaner guest communication.",
-    image: "/images/guide-gatlinburg.png",
+      "Duplex and single-family rentals that balance regional demand, metro access, and ownership discipline.",
+    detail: "Risk lens: straightforward layouts, sensible capex, commuter convenience.",
+    image: "/images/asset-concord.png",
   },
 ];
 
 const marketNotes = [
   {
     market: "Sevier County",
-    title: "Tourism demand works only when operations stay disciplined",
+    title: "Tourism demand matters only when operations stay disciplined",
     copy:
       "The Smokies can generate strong short-term demand, but the real edge comes from cleaner standards, sharper listing quality, and reliable turnover.",
   },
   {
-    market: "Sevierville",
-    title: "Drive-to access and cabin supply reward cleaner positioning",
+    market: "Pigeon Forge and Gatlinburg",
+    title: "Experience-led inventory tends to outperform generic lodging",
     copy:
-      "Sevierville works best for operators who understand presentation, booking flow, and how to turn practical inventory into a better guest stay.",
+      "Properties that know exactly who they serve usually hold up better than units competing only on price or location labels.",
   },
   {
-    market: "Pigeon Forge",
-    title: "Family-travel inventory performs best when the experience is clear",
+    market: "Charlotte region",
+    title: "Neighborhood selection beats metro-wide optimism",
     copy:
-      "In a dense vacation market, the properties that win usually explain the stay well and deliver exactly what the listing promises.",
+      "Charlotte keeps growing, but rental performance still comes down to street-level fit, product quality, and lease stability.",
   },
   {
-    market: "Gatlinburg and Wears Valley",
-    title: "Views and upkeep standards matter as much as nightly rate",
+    market: "Concord",
+    title: "Charlotte adjacency creates a quieter but useful rental lane",
     copy:
-      "Mountain inventory can justify strong rates, but only when the stay quality, cleanliness, and upkeep hold up against guest expectations.",
+      "Charlotte-region overflow can support practical long-term rental inventory when convenience, schools, and commuting patterns line up.",
   },
 ];
 
@@ -123,14 +123,14 @@ const guides = [
     image: "/images/guide-gatlinburg.png",
   },
   {
-    title: "Pigeon Forge",
-    copy: "Family-travel inventory supported by attraction access and repeat visitor demand.",
-    image: "/images/asset-parkway.png",
+    title: "Charlotte",
+    copy: "Urban rental demand built on neighborhood identity and access.",
+    image: "/images/guide-charlotte.png",
   },
   {
-    title: "Wears Valley",
-    copy: "View-driven stays where presentation and guest expectations need to stay aligned.",
-    image: "/images/hero-ridge.png",
+    title: "Concord",
+    copy: "Charlotte-region practicality with room for durable long-term holds.",
+    image: "/images/guide-concord.png",
   },
 ];
 
@@ -138,12 +138,12 @@ const marketTape = [
   "Pigeon Forge",
   "Downtown Sevierville",
   "Wears Valley",
-  "Gatlinburg",
-  "Townsend",
-  "Douglas Lake",
-  "Kodak",
-  "Pittman Center",
-  "Smoky Mountains",
+  "Knoxville",
+  "South End",
+  "NoDa",
+  "Plaza Midwood",
+  "Concord",
+  "Charlotte Metro",
 ];
 
 const navItems = [
@@ -222,11 +222,11 @@ export default function Home() {
           <div className={shell}>
             <div className="grid grid-cols-[minmax(0,0.98fr)_minmax(0,1.02fr)] gap-12 max-xl:grid-cols-1">
               <Reveal className="grid gap-4" distance="left">
-                <div className="group relative grid min-h-[30rem] content-end gap-3 overflow-hidden border border-ink/8 bg-paper p-6 shadow-[0_28px_60px_rgba(24,19,14,0.08)] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url('/images/visual-operating-base.png')" }}
-                  />
+                <div
+                  className="group relative grid min-h-[30rem] content-end gap-3 overflow-hidden border border-ink/8 bg-paper p-6 shadow-[0_28px_60px_rgba(24,19,14,0.08)] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2"
+                  style={{ backgroundImage: "url('/images/visual-operating-base.png')" }}
+                >
+                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/visual-operating-base.png')" }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                   <div className="absolute bottom-[-18%] right-[-8%] h-[70%] w-[70%] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.34),transparent_70%)]" />
                   <span className={`${label} relative z-[1] text-paper/70`}>Operating Base</span>
@@ -235,23 +235,23 @@ export default function Home() {
                   </h3>
                   <p className={`${copy} relative z-[1] text-paper/78`}>
                     A Smokies-facing presence built around short-term rental logic, stay quality,
-                    and guest-ready properties that can hold up across peak travel periods.
+                    and assets that can hold up beyond peak weekends.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
                   {[
                     {
-                      image: "/images/guide-sevierville.png",
-                      kicker: "Smokies Market",
-                      title: "Sevier County lanes",
+                      image: "/images/visual-charlotte.png",
+                      kicker: "Charlotte Region",
+                      title: "Metro rental lanes",
                       light: false,
                     },
                     {
                       image: "/images/visual-structure.png",
-                      kicker: "Service Standard",
-                      title: "Guest-ready operations",
-                      copy: "Clean turnovers, responsive service, reliable stays.",
+                      kicker: "Structure",
+                      title: "Member managed",
+                      copy: "Six or fewer members.",
                       light: true,
                     },
                   ].map((panel) => (
@@ -259,10 +259,7 @@ export default function Home() {
                       className="group relative grid min-h-64 content-end gap-3 overflow-hidden border border-ink/8 bg-paper p-6 shadow-[0_28px_60px_rgba(24,19,14,0.08)] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2"
                       key={panel.title}
                     >
-                      <div
-                        className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: `url('${panel.image}')` }}
-                      />
+                      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${panel.image}')` }} />
                       <div
                         className={
                           panel.light
@@ -271,20 +268,14 @@ export default function Home() {
                         }
                       />
                       <div className="absolute bottom-[-18%] right-[-8%] h-[70%] w-[70%] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.34),transparent_70%)]" />
-                      <span
-                        className={`${label} relative z-[1] ${panel.light ? "text-ink/50" : "text-paper/70"}`}
-                      >
+                      <span className={`${label} relative z-[1] ${panel.light ? "text-ink/50" : "text-paper/70"}`}>
                         {panel.kicker}
                       </span>
-                      <h3
-                        className={`relative z-[1] font-display text-[clamp(1.8rem,3vw,2.2rem)] leading-[1.05] tracking-[-0.03em] ${panel.light ? "text-ink" : "text-paper"}`}
-                      >
+                      <h3 className={`relative z-[1] font-display text-[clamp(1.8rem,3vw,2.2rem)] leading-[1.05] tracking-[-0.03em] ${panel.light ? "text-ink" : "text-paper"}`}>
                         {panel.title}
                       </h3>
                       {panel.copy ? (
-                        <p
-                          className={`${copy} relative z-[1] ${panel.light ? "text-ink/74" : "text-paper/78"}`}
-                        >
+                        <p className={`${copy} relative z-[1] ${panel.light ? "text-ink/74" : "text-paper/78"}`}>
                           {panel.copy}
                         </p>
                       ) : null}
@@ -295,18 +286,15 @@ export default function Home() {
 
               <Reveal className="grid content-start gap-4 pt-1" delay={120} distance="right">
                 <p className={`${label} text-ink/52`}>About VKR</p>
-                <h2 className={`${title} max-w-[17ch]`}>
-                  Based in Sevierville, with a Tennessee short-term rental focus.
-                </h2>
+                <h2 className={`${title} max-w-[17ch]`}>Based in Sevierville, with a Charlotte-region footprint.</h2>
                 <div className="grid gap-4">
                   <p className={`${copy} max-w-[34rem] leading-[1.75] text-ink/76`}>
-                    VKR Ventures is a Tennessee-based rental business operating from Sevierville,
-                    with its focus centered on Sevier County and the wider Smoky Mountains tourism
-                    corridor.
+                    VKR Ventures is a rental-focused business operating from Sevierville,
+                    Tennessee, with a Charlotte-region presence through Concord, North Carolina.
                   </p>
                   <p className={`${copy} max-w-[34rem] leading-[1.75] text-ink/76`}>
-                    The focus stays on cabins, furnished stays, and vacation rental properties in
-                    markets where guest demand and operational discipline can work together.
+                    The focus stays on short-term stays in tourism-driven areas and long-term
+                    rentals in neighborhoods with durable demand.
                   </p>
                 </div>
 
@@ -331,7 +319,7 @@ export default function Home() {
             <Reveal className="mx-auto mb-12 grid max-w-[56rem] gap-6 text-center">
               <p className={`${label} text-ink/52`}>What We Focus On</p>
               <h2 className={`${title} mx-auto max-w-[25ch]`}>
-                Short-term rentals, guest-ready standards, and steady operations.
+                Short-term rentals, long-term rentals, and steady operations.
               </h2>
               <p className={`${copy} mx-auto max-w-[38rem] text-ink/76`}>
                 That is the core story. The rest of the website should support it, not inflate it.
@@ -349,7 +337,7 @@ export default function Home() {
                   <div
                     className="-mx-[1.7rem] -mt-[1.7rem] mb-2 h-48 bg-cover bg-center"
                     style={{
-                      backgroundImage: `url('${["/images/pillar-str.png", "/images/pillar-ops.png", "/images/pillar-str.png"][index]}')`,
+                      backgroundImage: `url('${["/images/pillar-str.png", "/images/pillar-ltr.png", "/images/pillar-ops.png"][index]}')`,
                     }}
                   />
                   <span className={`${label} text-ink/40`}>0{index + 1}</span>
@@ -369,11 +357,11 @@ export default function Home() {
               <Reveal className="grid gap-6" distance="left">
                 <p className={`${label} text-paper/46`}>How We Work</p>
                 <h2 className={`${title} max-w-[25ch] text-[#fff8ee]`}>
-                  Simple standards that keep Tennessee stays operating well.
+                  Simple standards that keep the portfolio grounded.
                 </h2>
                 <p className={`${copy} max-w-[38rem] text-paper/70`}>
-                  We prefer clear standards over big claims: take on the right stays, operate
-                  consistently, and keep the guest experience dependable.
+                  We prefer clear standards over big claims: buy carefully, operate consistently,
+                  and stay selective about what fits the hold.
                 </p>
               </Reveal>
 
@@ -402,11 +390,11 @@ export default function Home() {
             <Reveal className="mb-10 flex items-end justify-between gap-8 max-xl:flex-col max-xl:items-start">
               <div className="grid gap-4">
                 <p className={`${label} text-ink/52`}>Portfolio Focus</p>
-                <h2 className={title}>The kinds of short-term rentals VKR is built around.</h2>
+                <h2 className={title}>The kinds of properties VKR is built around.</h2>
               </div>
               <p className="max-w-96 leading-[1.8] text-ink/62">
                 These are example portfolio lanes, not live listings. They show how the business
-                can be positioned across Sevier County and nearby Tennessee tourism corridors.
+                can be positioned across Tennessee and the Charlotte region.
               </p>
             </Reveal>
 
@@ -454,7 +442,7 @@ export default function Home() {
               <div className="grid gap-4">
                 <p className={`${label} text-paper/46`}>Why These Markets</p>
                 <h2 className={`${title} max-w-[25ch] text-[#fff8ee]`}>
-                  Different Tennessee stay markets still call for different operating strategies.
+                  Different markets call for different rental strategies.
                 </h2>
               </div>
               <Link className={secondaryButton} href="/contact">
@@ -486,11 +474,11 @@ export default function Home() {
             <Reveal className="mb-10 flex items-end justify-between gap-8 max-xl:flex-col max-xl:items-start">
               <div className="grid gap-4">
                 <p className={`${label} text-ink/52`}>Key Markets</p>
-                <h2 className={title}>A few Tennessee markets where the focus is strongest.</h2>
+                <h2 className={title}>A few places where the focus is strongest.</h2>
               </div>
               <p className="max-w-96 leading-[1.8] text-ink/62">
-                The focus stays tied to real short-term rental lanes across the Smokies and nearby
-                Tennessee tourism corridors.
+                The focus stays tied to real operating lanes across the Smokies, Charlotte, and
+                nearby growth corridors.
               </p>
             </Reveal>
 
@@ -502,10 +490,7 @@ export default function Home() {
                   delay={index * 110}
                   key={guide.title}
                 >
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url('${guide.image}')` }}
-                  />
+                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${guide.image}')` }} />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(7,6,5,0.52))]" />
                   <span className={`${label} relative z-[1] text-paper`}>Guide</span>
                   <div className="relative z-[1] grid gap-3 text-paper">
@@ -538,7 +523,7 @@ export default function Home() {
             <Reveal className="grid gap-6" distance="left">
               <p className={`${label} text-paper/46`}>Connect</p>
               <h2 className={`${title} max-w-[25ch] text-[#fff8ee]`}>
-                Looking at a Tennessee short-term rental opportunity?
+                Looking at a rental opportunity in Tennessee or the Charlotte region?
               </h2>
               <p className={`${copy} max-w-[38rem] text-paper/70`}>
                 If a property fits the focus, the details below are the right place to start.
@@ -549,8 +534,8 @@ export default function Home() {
                 <div className="grid gap-3">
                   {[
                     "Short-term rentals in the Smokies",
-                    "Cabins and furnished stays in Sevier County",
-                    "Well-located properties with guest-ready upside",
+                    "Long-term rentals in the Charlotte region",
+                    "Well-located properties with operating upside",
                   ].map((field) => (
                     <span
                       className="border border-white/12 bg-white/3 px-[1.1rem] py-4 text-paper/72"
@@ -580,14 +565,14 @@ export default function Home() {
                   detail: "Sevierville, TN 37862",
                 },
                 {
-                  label: "Market focus",
-                  value: "Sevier County and the Smokies",
-                  detail: "Sevierville, Pigeon Forge, Gatlinburg, and nearby Tennessee stay markets",
+                  label: "Charlotte-region footprint",
+                  value: "2357 Herrons Nest Pl NW",
+                  detail: "Concord, NC 28027",
                 },
                 {
                   label: "Focus",
-                  value: "Short-term rentals",
-                  detail: "Cabins, furnished stays, and vacation rental operations",
+                  value: "Short-term and long-term rentals",
+                  detail: "Properties selected for location strength, operating fit, and hold quality",
                 },
               ].map((card) => (
                 <div
@@ -607,7 +592,7 @@ export default function Home() {
           <div className="mt-12 flex flex-wrap gap-x-6 gap-y-4 border-t border-white/12 pt-8 text-[0.78rem] uppercase tracking-[0.18em] text-paper/46">
             <span>VKR Ventures LLC</span>
             <span>Sevierville, Tennessee</span>
-            <span>Smoky Mountains short-term rentals</span>
+            <span>Charlotte region</span>
           </div>
         </div>
       </footer>

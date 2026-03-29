@@ -19,9 +19,9 @@ const emailJsConfig = {
 };
 
 const serviceLabels = {
-  listings: "Listing optimization and pricing",
-  management: "Short-term property management",
-  operations: "Guest operations and turnover",
+  both: "Short-term and long-term property management",
+  "long-term": "Long-term property management",
+  "short-term": "Short-term property management",
 } as const;
 
 type StatusTone = "error" | "idle" | "success";
@@ -219,9 +219,9 @@ export function ContactInquiryForm() {
               <option value="" disabled>
                 Select a service
               </option>
-              <option value="management">Short-term property management</option>
-              <option value="listings">Listing optimization and pricing</option>
-              <option value="operations">Guest operations and turnover</option>
+              <option value="short-term">Short-term property management</option>
+              <option value="long-term">Long-term property management</option>
+              <option value="both">Both</option>
             </select>
             <span className="pointer-events-none absolute right-5 top-1/2 h-[0.55rem] w-[0.55rem] -translate-y-[60%] rotate-45 border-b-[1.5px] border-r-[1.5px] border-ink/54" />
           </div>
@@ -244,7 +244,7 @@ export function ContactInquiryForm() {
         <textarea
           className={`${inputBase} min-h-40 resize-y`}
           name="message"
-          placeholder="Tell us about the stay, the property, and what kind of short-term rental help you need."
+          placeholder="Tell us about the property, current use, and what help you need."
           required
           rows={7}
         />

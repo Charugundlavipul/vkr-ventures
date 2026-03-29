@@ -9,16 +9,23 @@ const officeCards = [
     detail: "Sevierville, TN 37862",
   },
   {
-    label: "Service area",
-    title: "Sevier County and the Smokies",
-    detail: "Sevierville, Pigeon Forge, Gatlinburg, and Wears Valley",
+    label: "Charlotte-region mailing",
+    title: "2357 Herrons Nest Pl NW",
+    detail: "Concord, NC 28027",
   },
 ];
 
+const directContact = {
+  phoneLabel: "704-780-1369",
+  phoneHref: "tel:7047801369",
+  emailLabel: "support@vkr-ventures.com",
+  emailHref: "mailto:support@vkr-ventures.com",
+};
+
 const serviceNotes = [
   "Short-term property management",
-  "Cabin and vacation rental operations",
-  "Smoky Mountains guest-ready stays",
+  "Long-term property management",
+  "Smokies and Charlotte-region properties",
 ];
 
 const navItems = [
@@ -32,7 +39,8 @@ const navItems = [
 const shell =
   "mx-auto w-[min(1180px,calc(100vw-48px))] max-md:w-[min(1180px,calc(100vw-32px))]";
 const label = "text-[0.72rem] uppercase tracking-[0.2em] leading-[1.3]";
-const title = "font-display font-medium leading-[1.02] tracking-[-0.04em]";
+const title =
+  "font-display font-medium leading-[1.02] tracking-[-0.04em]";
 const copy = "text-[clamp(1rem,1.8vw,1.08rem)] leading-[1.85]";
 const card =
   "rounded-[1.2rem] border border-ink/8 bg-white/90 shadow-[0_28px_60px_rgba(24,19,14,0.08)]";
@@ -60,8 +68,8 @@ export default function ContactPage() {
                 Contact VKR Ventures.
               </h1>
               <p className={`${copy} max-w-[38rem] text-paper/76`}>
-                Tell us if you need short-term rental management in Sevierville, Pigeon Forge,
-                Gatlinburg, or nearby Smoky Mountains markets.
+                Tell us if you need short-term or long-term property management in the Smokies or
+                the Charlotte region.
               </p>
             </div>
           </div>
@@ -91,21 +99,27 @@ export default function ContactPage() {
                     VKR Ventures LLC
                   </h2>
                   <p className={`${copy} text-ink/70`}>
-                    Short-term rental management focused on Sevierville, Pigeon Forge, Gatlinburg,
-                    and nearby Smoky Mountains markets.
+                    Property management focused on short-term and long-term rentals across
+                    Tennessee and the Charlotte region.
                   </p>
 
-                  <div className="grid gap-4">
-                    <article className="grid gap-2 pt-1">
-                      <span className={`${label} text-ink/48`}>Direct Contact</span>
-                      <strong className={`${title} text-[1.6rem] text-ink`}>
-                        <a href="tel:7047801369" className="hover:opacity-70 transition-opacity">704-780-1369</a>
-                      </strong>
-                      <span className={`${copy} text-ink/68`}>
-                        <a href="mailto:support@vkr-ventures.com" className="hover:opacity-70 transition-opacity">support@vkr-ventures.com</a>
-                      </span>
-                    </article>
+                  <article className="grid gap-2 pt-1">
+                    <span className={`${label} text-ink/48`}>Direct contact</span>
+                    <a
+                      className={`${title} text-[1.6rem] text-ink transition duration-300 hover:text-ink/72`}
+                      href={directContact.phoneHref}
+                    >
+                      {directContact.phoneLabel}
+                    </a>
+                    <a
+                      className={`${copy} text-ink/68 transition duration-300 hover:text-ink`}
+                      href={directContact.emailHref}
+                    >
+                      {directContact.emailLabel}
+                    </a>
+                  </article>
 
+                  <div className="grid gap-4">
                     {officeCards.map((office) => (
                       <article className="grid gap-2 pt-1" key={office.title}>
                         <span className={`${label} text-ink/48`}>{office.label}</span>
@@ -142,7 +156,7 @@ export default function ContactPage() {
           <div className="flex flex-wrap justify-between gap-x-6 gap-y-4 text-[0.78rem] uppercase tracking-[0.18em] text-paper/46 max-md:justify-start">
             <span>VKR Ventures LLC</span>
             <span>Sevierville, Tennessee</span>
-            <span>Smoky Mountains short-term rentals</span>
+            <span>Charlotte region</span>
           </div>
         </div>
       </footer>
