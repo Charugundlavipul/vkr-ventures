@@ -58,7 +58,7 @@ export function SiteNav({ brandHref, items }: SiteNavProps) {
               height={408}
               priority
               sizes="(max-width: 767px) 132px, 156px"
-              src="/images/vkr-ventures.png"
+              src="/images/vkr-ventures.jpeg"
               width={612}
             />
             <span className="sr-only">VKR Ventures</span>
