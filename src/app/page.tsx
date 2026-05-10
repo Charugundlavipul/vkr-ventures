@@ -84,32 +84,6 @@ const portfolioProfiles = [
   },
 ];
 
-const marketNotes = [
-  {
-    market: "Sevier County",
-    title: "Tourism demand matters only when operations stay disciplined",
-    copy:
-      "The Smokies can generate strong short-term demand, but the real edge comes from cleaner standards, sharper listing quality, and reliable turnover.",
-  },
-  {
-    market: "Pigeon Forge and Gatlinburg",
-    title: "Experience-led inventory tends to outperform generic lodging",
-    copy:
-      "Properties that know exactly who they serve usually hold up better than units competing only on price or location labels.",
-  },
-  {
-    market: "Charlotte region",
-    title: "Neighborhood selection beats metro-wide optimism",
-    copy:
-      "Charlotte keeps growing, but rental performance still comes down to street-level fit, product quality, and lease stability.",
-  },
-  {
-    market: "Concord",
-    title: "Charlotte adjacency creates a quieter but useful rental lane",
-    copy:
-      "Charlotte-region overflow can support practical long-term rental inventory when convenience, schools, and commuting patterns line up.",
-  },
-];
 
 const guides = [
   {
@@ -150,7 +124,6 @@ const navItems = [
   { label: "About", href: "/#about" },
   { label: "Focus", href: "/#focus" },
   { label: "Portfolio", href: "/#portfolio" },
-  { label: "Markets", href: "/#markets" },
   { label: "Contact", href: "/contact", cta: true },
 ];
 
@@ -207,7 +180,7 @@ export default function Home() {
                   <a className={`${primaryButton} max-md:w-full`} href="#focus">
                     Explore services
                   </a>
-                  <a className={`${secondaryButton} max-md:w-full`} href="#markets">
+                  <a className={`${secondaryButton} max-md:w-full`} href="#portfolio">
                     View markets
                   </a>
                 </div>
@@ -218,7 +191,7 @@ export default function Home() {
       </header>
 
       <main className="flex flex-col">
-        <section className={`${section} bg-paper text-ink`} id="about">
+        <section className={`${section} pb-14 bg-[radial-gradient(ellipse_80%_60%_at_30%_20%,rgba(237,228,214,0.5),transparent_60%),radial-gradient(circle_at_70%_80%,rgba(197,143,82,0.06),transparent_50%),linear-gradient(180deg,#faf7f3_0%,#f5f0ea_100%)] text-ink`} id="about">
           <div className={shell}>
             <div className="grid grid-cols-[minmax(0,0.98fr)_minmax(0,1.02fr)] gap-12 max-xl:grid-cols-1">
               <Reveal className="grid gap-4" distance="left">
@@ -237,50 +210,6 @@ export default function Home() {
                     A Smokies-facing presence built around short-term rental logic, stay quality,
                     and assets that can hold up beyond peak weekends.
                   </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-                  {[
-                    {
-                      image: "/images/visual-charlotte.png",
-                      kicker: "Charlotte Region",
-                      title: "Metro rental lanes",
-                      light: false,
-                    },
-                    {
-                      image: "/images/visual-structure.png",
-                      kicker: "Structure",
-                      title: "Member managed",
-                      copy: "Six or fewer members.",
-                      light: true,
-                    },
-                  ].map((panel) => (
-                    <div
-                      className="group relative grid min-h-64 content-end gap-3 overflow-hidden border border-ink/8 bg-paper p-6 shadow-[0_28px_60px_rgba(24,19,14,0.08)] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2"
-                      key={panel.title}
-                    >
-                      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${panel.image}')` }} />
-                      <div
-                        className={
-                          panel.light
-                            ? "absolute inset-0 bg-gradient-to-t from-white/80 via-white/20 to-transparent"
-                            : "absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"
-                        }
-                      />
-                      <div className="absolute bottom-[-18%] right-[-8%] h-[70%] w-[70%] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.34),transparent_70%)]" />
-                      <span className={`${label} relative z-[1] ${panel.light ? "text-ink/50" : "text-paper/70"}`}>
-                        {panel.kicker}
-                      </span>
-                      <h3 className={`relative z-[1] font-display text-[clamp(1.8rem,3vw,2.2rem)] leading-[1.05] tracking-[-0.03em] ${panel.light ? "text-ink" : "text-paper"}`}>
-                        {panel.title}
-                      </h3>
-                      {panel.copy ? (
-                        <p className={`${copy} relative z-[1] ${panel.light ? "text-ink/74" : "text-paper/78"}`}>
-                          {panel.copy}
-                        </p>
-                      ) : null}
-                    </div>
-                  ))}
                 </div>
               </Reveal>
 
@@ -316,7 +245,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={`${section} bg-paper text-ink`} id="focus">
+        {/* Divider between About and Focus */}
+        <div className="h-px bg-[linear-gradient(90deg,transparent_5%,rgba(23,20,17,0.10)_30%,rgba(23,20,17,0.10)_70%,transparent_95%)]" />
+        <section className={`${section} pt-14 bg-[radial-gradient(circle_at_0%_0%,rgba(255,255,255,1)_0%,transparent_60%),radial-gradient(circle_at_100%_100%,rgba(197,143,82,0.15)_0%,transparent_60%),linear-gradient(145deg,#faf8f5_0%,#e8e0d2_100%)] text-ink`} id="focus">
           <div className={shell}>
             <Reveal className="mx-auto mb-12 grid max-w-[56rem] gap-6 text-center">
               <p className={`${label} text-ink/52`}>What We Focus On</p>
@@ -365,6 +296,13 @@ export default function Home() {
                   We prefer clear standards over big claims: buy carefully, operate consistently,
                   and stay selective about what fits the hold.
                 </p>
+                <div className="mt-4 overflow-hidden border border-white/12 bg-white/5 shadow-2xl transition duration-500 hover:border-white/20">
+                  <img
+                    src="/images/how-we-work.png"
+                    alt="Disciplined standards and quality focus"
+                    className="h-[22rem] w-full object-cover opacity-80 transition duration-700 hover:scale-105 hover:opacity-100"
+                  />
+                </div>
               </Reveal>
 
               <div className="grid gap-4">
@@ -387,17 +325,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={`${section} bg-paper text-ink`} id="portfolio">
+        {/* Divider between Focus and Portfolio */}
+        <div className="h-px bg-[linear-gradient(90deg,transparent_5%,rgba(23,20,17,0.10)_30%,rgba(23,20,17,0.10)_70%,transparent_95%)]" />
+        <section className={`${section} bg-[radial-gradient(ellipse_70%_50%_at_20%_80%,rgba(197,143,82,0.06),transparent_50%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.7),transparent_40%),linear-gradient(180deg,#f7f3ed_0%,#f2ece4_100%)] text-ink`} id="portfolio">
           <div className={shell}>
             <Reveal className="mb-10 flex items-end justify-between gap-8 max-xl:flex-col max-xl:items-start">
               <div className="grid gap-4">
                 <p className={`${label} text-ink/52`}>Portfolio Focus</p>
                 <h2 className={title}>The kinds of properties VKR is built around.</h2>
               </div>
-              <p className="max-w-96 leading-[1.8] text-ink/62">
-                These are example portfolio lanes, not live listings. They show how the business
-                can be positioned across Tennessee and the Charlotte region.
-              </p>
+
             </Reveal>
 
             <div className="grid grid-cols-2 gap-5 max-xl:grid-cols-1">
@@ -413,7 +350,7 @@ export default function Home() {
                     style={{ backgroundImage: `url('${profile.image}')` }}
                   >
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(7,6,5,0.5)),repeating-linear-gradient(90deg,transparent_0_5%,rgba(255,248,236,0.07)_5%_6%,transparent_6%_11%)] mix-blend-screen" />
-                    <span className={`${label} relative z-[1] text-paper/74`}>{profile.type}</span>
+
                     <span className="relative z-[1] rounded-full border border-white/14 bg-white/8 px-3 py-2 text-[0.74rem] uppercase tracking-[0.14em]">
                       {profile.location}
                     </span>
@@ -424,7 +361,7 @@ export default function Home() {
                       {profile.title}
                     </h3>
                     <p className={`${copy} text-ink/74`}>{profile.description}</p>
-                    <p className={`${copy} text-ink/60`}>{profile.detail}</p>
+
                     <Link
                       className="inline-flex justify-self-start rounded-full border border-ink/14 px-[1.45rem] py-4 text-[0.8rem] uppercase tracking-[0.18em] text-ink transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[3px] hover:bg-ink/4"
                       href="/contact"
@@ -438,47 +375,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={`${section} bg-background text-foreground`} id="markets">
+        <section id="markets" className={`${section} bg-background text-foreground`}>
           <div className={shell}>
             <Reveal className="mb-10 flex items-end justify-between gap-8 max-xl:flex-col max-xl:items-start">
               <div className="grid gap-4">
-                <p className={`${label} text-paper/46`}>Why These Markets</p>
-                <h2 className={`${title} max-w-[25ch] text-[#fff8ee]`}>
-                  Different markets call for different rental strategies.
-                </h2>
+                <p className={`${label} text-paper/46`}>Key Markets</p>
+                <h2 className={`${title} text-[#fff8ee]`}>A few places where the focus is strongest.</h2>
               </div>
-              <Link className={secondaryButton} href="/contact">
-                Start a conversation
-              </Link>
-            </Reveal>
-
-            <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-              {marketNotes.map((note, index) => (
-                <Reveal
-                  as="article"
-                  className={`${darkCard} grid min-h-72 gap-4 p-6 transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2`}
-                  delay={index * 120}
-                  key={note.title}
-                >
-                  <span className={`${label} text-paper/46`}>{note.market}</span>
-                  <h3 className="font-display text-[clamp(1.9rem,2.8vw,2.6rem)] leading-[1.05] tracking-[-0.03em] text-[#fff8ee]">
-                    {note.title}
-                  </h3>
-                  <p className={`${copy} text-paper/68`}>{note.copy}</p>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className={`${section} bg-paper text-ink`}>
-          <div className={shell}>
-            <Reveal className="mb-10 flex items-end justify-between gap-8 max-xl:flex-col max-xl:items-start">
-              <div className="grid gap-4">
-                <p className={`${label} text-ink/52`}>Key Markets</p>
-                <h2 className={title}>A few places where the focus is strongest.</h2>
-              </div>
-              <p className="max-w-96 leading-[1.8] text-ink/62">
+              <p className="max-w-96 leading-[1.8] text-paper/62">
                 The focus stays tied to real operating lanes across the Smokies, Charlotte, and
                 nearby growth corridors.
               </p>
@@ -488,7 +392,7 @@ export default function Home() {
               {guides.map((guide, index) => (
                 <Reveal
                   as="article"
-                  className="group relative grid min-h-[27rem] content-between overflow-hidden border border-ink/8 p-[1.35rem] shadow-[0_28px_60px_rgba(24,19,14,0.08)] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 max-md:min-h-56"
+                  className="group relative grid min-h-[27rem] content-between overflow-hidden border border-white/12 p-[1.35rem] shadow-[0_28px_60px_rgba(0,0,0,0.16)] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 max-md:min-h-56"
                   delay={index * 110}
                   key={guide.title}
                 >
@@ -508,7 +412,7 @@ export default function Home() {
             <div className="mt-5 flex flex-wrap gap-3">
               {marketTape.map((item) => (
                 <span
-                  className="inline-flex items-center justify-center rounded-full border border-ink/10 bg-white/76 px-5 py-4 text-[0.78rem] uppercase tracking-[0.18em] text-ink/78"
+                  className="inline-flex items-center justify-center rounded-full border border-white/14 bg-white/8 px-5 py-4 text-[0.78rem] uppercase tracking-[0.18em] text-paper/72"
                   key={item}
                 >
                   {item}
@@ -519,47 +423,51 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="relative bg-[radial-gradient(circle_at_top_right,rgba(197,143,82,0.14),transparent_28%),linear-gradient(180deg,#100d0a_0%,#0d0b08_100%)] px-0 py-28 pb-8 text-foreground max-md:py-20">
+      <footer className="relative bg-[radial-gradient(ellipse_80%_50%_at_20%_60%,rgba(197,143,82,0.13),transparent_50%),radial-gradient(circle_at_top_right,rgba(197,143,82,0.22),transparent_34%),radial-gradient(ellipse_60%_40%_at_80%_90%,rgba(160,120,70,0.1),transparent_50%),linear-gradient(180deg,#1e1914_0%,#171310_40%,#12100d_100%)] px-0 py-28 pb-8 text-foreground max-md:py-20">
         <div className={shell}>
-          <div className="grid grid-cols-[minmax(0,0.98fr)_minmax(0,1.02fr)] items-start gap-12 max-xl:grid-cols-1">
-            <Reveal className="grid gap-6" distance="left">
-              <p className={`${label} text-paper/46`}>Connect</p>
-              <h2 className={`${title} max-w-[25ch] text-[#fff8ee]`}>
-                Looking at a rental opportunity in Tennessee or the Charlotte region?
-              </h2>
-              <p className={`${copy} max-w-[38rem] text-paper/70`}>
-                If a property fits the focus, the details below are the right place to start.
-              </p>
+          <div className="grid grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] items-start gap-12 max-xl:grid-cols-1">
+            <div className="grid gap-8">
+              <Reveal className="grid gap-6" distance="left">
+                <p className={`${label} text-paper/46`}>Connect</p>
+                <h2 className={`${title} max-w-[40ch] text-[#fff8ee]`}>
+                  Looking at a rental opportunity in Tennessee or the Charlotte region?
+                </h2>
+                <p className={`${copy} max-w-[38rem] text-paper/70`}>
+                  If a property fits the focus, the details below are the right place to start.
+                </p>
+              </Reveal>
 
-              <div className={`${darkCard} mt-4 grid gap-5 p-6`}>
-                <span className={`${label} text-paper/48`}>Best fit</span>
-                <div className="grid gap-3">
-                  {[
-                    "Short-term rentals in the Smokies",
-                    "Long-term rentals in the Charlotte region",
-                    "Well-located properties with operating upside",
-                  ].map((field) => (
-                    <span
-                      className="border border-white/12 bg-white/3 px-[1.1rem] py-4 text-paper/72"
-                      key={field}
-                    >
-                      {field}
-                    </span>
-                  ))}
+              <Reveal className="grid content-start" distance="left">
+                <div className={`${darkCard} grid gap-5 p-6`}>
+                  <span className={`${label} text-paper/48`}>Best fit</span>
+                  <div className="grid gap-3">
+                    {[
+                      "Short-term rentals in the Smokies",
+                      "Long-term rentals in the Charlotte region",
+                      "Well-located properties with operating upside",
+                    ].map((field) => (
+                      <span
+                        className="border border-white/12 bg-white/3 px-[1.1rem] py-4 text-paper/72"
+                        key={field}
+                      >
+                        {field}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap justify-center gap-4 max-md:w-full">
+                    <Link className={primaryButton} href="/contact">
+                      Open contact page
+                    </Link>
+                    <a className={secondaryButton} href="#portfolio">
+                      Review markets
+                    </a>
+                  </div>
                 </div>
+              </Reveal>
+            </div>
 
-                <div className="flex flex-wrap justify-center gap-4 max-md:w-full">
-                  <Link className={primaryButton} href="/contact">
-                    Open contact page
-                  </Link>
-                  <a className={secondaryButton} href="#markets">
-                    Review markets
-                  </a>
-                </div>
-              </div>
-            </Reveal>
-
-            <Reveal className="grid gap-4" delay={120} distance="right">
+            <Reveal className="grid gap-4 content-start" delay={120} distance="right">
               {[
                 {
                   label: "Based in Tennessee",
