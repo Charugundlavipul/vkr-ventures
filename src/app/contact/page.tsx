@@ -64,7 +64,7 @@ export default function ContactPage() {
           <div className={shell}>
             <div className="relative z-[1] grid min-h-[26rem] content-center gap-5 py-[3.75rem] text-paper max-md:min-h-96">
               <p className={`${label} text-paper/82`}>Contact Us</p>
-              <h1 className={`${title} max-w-[12ch] text-[clamp(3rem,6vw,4.8rem)] text-balance`}>
+              <h1 className={`${title} max-w-[24ch] text-[clamp(3rem,6vw,4.8rem)] text-balance`}>
                 Contact VKR Ventures.
               </h1>
               <p className={`${copy} max-w-[38rem] text-paper/76`}>

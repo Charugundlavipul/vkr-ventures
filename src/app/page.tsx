@@ -444,7 +444,6 @@ export default function Home() {
                     {[
                       "Short-term rentals in the Smokies",
                       "Long-term rentals in the Charlotte region",
-                      "Well-located properties with operating upside",
                     ].map((field) => (
                       <span
                         className="border border-white/12 bg-white/3 px-[1.1rem] py-4 text-paper/72"
