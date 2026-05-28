@@ -51,7 +51,7 @@ const marketTape = [
 
 const shell =
   "mx-auto w-[min(1180px,calc(100vw-48px))] max-md:w-[min(1180px,calc(100vw-32px))]";
-const section = "relative py-28 max-md:py-20";
+const section = "relative py-28 max-md:py-20 overflow-clip";
 const label = "text-[0.72rem] uppercase tracking-[0.2em] leading-[1.3]";
 const title =
   "font-display text-[clamp(1.8rem,3.2vw,2.4rem)] font-medium leading-[1.05] tracking-[-0.04em]";
@@ -67,7 +67,7 @@ const darkCard =
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden w-full flex flex-col">
       <header className="relative overflow-clip">
         <SiteNav brandHref="/#top" items={navItems} />
 
@@ -200,18 +200,20 @@ export default function Home() {
 
               {/* Long-Term Card */}
               <Reveal distance="left">
-                <a href="#long-term" className="group relative grid min-h-[32rem] content-end overflow-hidden border border-white/12 p-8 shadow-[0_28px_60px_rgba(0,0,0,0.2)] transition duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:border-white/20 max-md:min-h-[24rem]">
+                <a href="#long-term" className="group relative flex flex-col justify-between min-h-[32rem] overflow-hidden border border-white/12 p-8 shadow-[0_28px_60px_rgba(0,0,0,0.2)] transition duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:border-white/20 max-md:min-h-[28rem] max-md:p-6 max-md:gap-8">
                   <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.04]" style={{ backgroundImage: "url('/images/showcase-ltr.png')" }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b08]/95 via-[#0d0b08]/50 to-[#0d0b08]/15" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b08]/95 via-[#0d0b08]/60 to-[#0d0b08]/20" />
 
                   {/* Top badge */}
-                  <span className="absolute top-6 left-6 z-10 rounded-full border border-white/14 bg-white/8 backdrop-blur-sm px-4 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-paper/80">
-                    Charlotte & Concord
-                  </span>
+                  <div className="relative z-10 flex items-start">
+                    <span className="rounded-full border border-white/14 bg-white/8 backdrop-blur-sm px-4 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-paper/80">
+                      Charlotte & Concord
+                    </span>
+                  </div>
 
                   {/* Content */}
-                  <div className="relative z-10 grid gap-4">
-                    <span className={`${label} text-accent`}>Long-Term Rentals</span>
+                  <div className="relative z-10 grid gap-4 mt-auto">
+                    <span className={`${label} text-[#fff8ee]/70`}>Long-Term Rentals</span>
                     <h3 className="font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-[1.02] tracking-[-0.03em] text-[#fff8ee]">
                       Residential properties built for lease-backed stability
                     </h3>
@@ -240,19 +242,19 @@ export default function Home() {
 
               {/* Short-Term Card */}
               <Reveal distance="right" delay={140}>
-                <a href="#short-term" className="group relative grid min-h-[32rem] content-end overflow-hidden border border-white/12 p-8 shadow-[0_28px_60px_rgba(0,0,0,0.2)] transition duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:border-white/20 max-md:min-h-[24rem]">
+                <a href="#short-term" className="group relative flex flex-col justify-between min-h-[32rem] overflow-hidden border border-white/12 p-8 shadow-[0_28px_60px_rgba(0,0,0,0.2)] transition duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:border-white/20 max-md:min-h-[28rem] max-md:p-6 max-md:gap-8">
                   <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.04]" style={{ backgroundImage: "url('/images/showcase-str.png')" }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b08]/95 via-[#0d0b08]/50 to-[#0d0b08]/15" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b08]/95 via-[#0d0b08]/60 to-[#0d0b08]/20" />
 
                   {/* Top badges */}
-                  <div className="absolute top-6 left-6 right-6 z-10 flex items-center justify-between flex-wrap gap-2">
+                  <div className="relative z-10 flex items-start justify-between flex-wrap gap-2">
                     <span className="rounded-full border border-white/14 bg-white/8 backdrop-blur-sm px-4 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-paper/80">
                       Smokies & Lake Norman
                     </span>
                   </div>
 
                   {/* Content */}
-                  <div className="relative z-10 grid gap-4">
+                  <div className="relative z-10 grid gap-4 mt-auto">
                     <span className={`${label} text-[#fff8ee]/70`}>Vacation Rentals</span>
                     <h3 className="font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-[1.02] tracking-[-0.03em] text-[#fff8ee]">
                       Luxury vacation stays curated by NirvanaLuxe
@@ -309,17 +311,17 @@ export default function Home() {
               </div>
 
               {/* VKR Ventures logo card */}
-              <div className="grid gap-3 justify-items-center text-center p-6 border border-ink/8 bg-white/60 backdrop-blur-[12px] shadow-[0_24px_50px_rgba(24,19,14,0.06)] transition duration-[420ms] hover:-translate-y-1 max-md:justify-self-start max-md:w-full">
-                <div className="w-28 h-28 flex items-center justify-center p-3 bg-background rounded-xl border border-ink/10 shadow-md">
+              <div className="grid gap-3 justify-items-center text-center p-6 border border-ink/8 bg-white/60 backdrop-blur-[12px] shadow-[0_24px_50px_rgba(24,19,14,0.06)] transition duration-[420ms] hover:-translate-y-1 max-md:flex max-md:items-center max-md:justify-start max-md:p-4 max-md:text-left max-md:w-full max-md:gap-4 max-md:rounded-2xl">
+                <div className="w-28 h-28 flex items-center justify-center p-3 bg-background rounded-xl border border-ink/10 shadow-md max-md:w-16 max-md:h-16 max-md:p-1.5 max-md:shrink-0 max-md:rounded-lg">
                   <img
                     src="/images/vkr-ventures.jpeg"
                     alt="VKR Ventures Logo"
                     className="max-h-full max-w-full object-contain rounded-md opacity-90 transition-opacity hover:opacity-100"
                   />
                 </div>
-                <div className="grid gap-0.5">
-                  <span className="font-display text-lg font-bold text-ink">VKR Ventures</span>
-                  <span className="text-[0.65rem] uppercase tracking-wider text-ink/60">Asset Management</span>
+                <div className="grid gap-0.5 max-md:gap-0">
+                  <span className="font-display text-lg font-bold text-ink max-md:text-base">VKR Ventures</span>
+                  <span className="text-[0.65rem] uppercase tracking-wider text-ink/60 max-md:text-[0.6rem]">Asset Management</span>
                 </div>
               </div>
             </Reveal>
@@ -400,17 +402,17 @@ export default function Home() {
               </div>
 
               {/* NirvanaLuxe logo card */}
-              <div className="grid gap-3 justify-items-center text-center p-6 border border-white/12 bg-white/4 backdrop-blur-[12px] shadow-[0_24px_50px_rgba(0,0,0,0.22)] transition duration-[420ms] hover:-translate-y-1 max-md:justify-self-start max-md:w-full">
-                <div className="w-28 h-28 flex items-center justify-center p-3 bg-white rounded-xl border border-white/10 shadow-lg">
+              <div className="grid gap-3 justify-items-center text-center p-6 border border-white/12 bg-white/4 backdrop-blur-[12px] shadow-[0_24px_50px_rgba(0,0,0,0.22)] transition duration-[420ms] hover:-translate-y-1 max-md:flex max-md:items-center max-md:justify-start max-md:p-4 max-md:text-left max-md:w-full max-md:gap-4 max-md:rounded-2xl">
+                <div className="w-28 h-28 flex items-center justify-center p-3 bg-white rounded-xl border border-white/10 shadow-lg max-md:w-16 max-md:h-16 max-md:p-1.5 max-md:shrink-0 max-md:rounded-lg">
                   <img
                     src="/images/nirvanaluxe-logo.jpg"
                     alt="NirvanaLuxe Logo"
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
-                <div className="grid gap-0.5">
-                  <span className="font-display text-lg font-bold text-[#fff8ee]">NirvanaLuxe</span>
-                  <span className="text-[0.65rem] uppercase tracking-wider text-accent">DBA of VKR Ventures</span>
+                <div className="grid gap-0.5 max-md:gap-0">
+                  <span className="font-display text-lg font-bold text-[#fff8ee] max-md:text-base">NirvanaLuxe</span>
+                  <span className="text-[0.65rem] uppercase tracking-wider text-accent max-md:text-[0.6rem]">A VKR Ventures Brand</span>
                 </div>
               </div>
             </Reveal>
