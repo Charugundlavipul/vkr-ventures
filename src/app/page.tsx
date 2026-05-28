@@ -501,10 +501,10 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-3 max-md:gap-2 max-md:justify-center">
               {marketTape.map((item) => (
                 <span
-                  className="inline-flex items-center justify-center rounded-full border border-ink/10 bg-white/60 px-5 py-4 text-[0.78rem] uppercase tracking-[0.18em] text-ink/62"
+                  className="inline-flex items-center justify-center rounded-full border border-ink/10 bg-white/60 px-5 py-4 text-[0.78rem] uppercase tracking-[0.18em] text-ink/62 max-md:px-4 max-md:py-2.5 max-md:text-[0.65rem]"
                   key={item}
                 >
                   {item}
