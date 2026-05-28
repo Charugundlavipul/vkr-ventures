@@ -48,13 +48,13 @@ export function SiteNav({ brandHref, items }: SiteNavProps) {
   };
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/12 bg-background/55 backdrop-blur-[22px]">
-      <div className={cn(shell, "flex items-center justify-between gap-8 py-[1.15rem] max-md:grid max-md:gap-3 max-md:py-4")}>
+    <nav className="fixed top-0 left-0 w-full z-50 border-b border-white/12 bg-background/40 backdrop-blur-[22px]">
+      <div className={cn(shell, "flex items-center justify-between gap-8 py-2 max-md:grid max-md:gap-3 max-md:py-3")}>
         <div className="flex w-full items-center justify-between gap-4">
           <Link className="inline-flex items-center" href={brandHref} onClick={closeMenu}>
             <Image
               alt="VKR Ventures"
-              className="h-12 w-auto md:h-[3.8rem]"
+              className="h-12 w-auto md:h-[4.2rem] rounded-lg mix-blend-screen opacity-90 transition-opacity hover:opacity-100"
               height={408}
               priority
               sizes="(max-width: 767px) 132px, 156px"
@@ -82,29 +82,31 @@ export function SiteNav({ brandHref, items }: SiteNavProps) {
 
         <div
           className={cn(
-            "flex max-md:grid max-md:overflow-hidden max-md:transition-[grid-template-rows,opacity] max-md:duration-300 max-md:ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "flex max-md:grid max-md:overflow-hidden max-md:transition-[grid-template-rows,opacity,margin-top] max-md:duration-300 max-md:ease-[cubic-bezier(0.22,1,0.36,1)]",
             menuOpen
-              ? "max-md:[grid-template-rows:1fr] max-md:opacity-100"
-              : "max-md:[grid-template-rows:0fr] max-md:opacity-0",
+              ? "max-md:[grid-template-rows:1fr] max-md:opacity-100 max-md:mt-4"
+              : "max-md:[grid-template-rows:0fr] max-md:opacity-0 max-md:mt-0",
           )}
           id="site-nav-links"
         >
-          <div className="flex items-center gap-6 max-md:grid max-md:gap-1 max-md:rounded-[1.2rem] max-md:border max-md:border-white/12 max-md:bg-background/88 max-md:p-4 max-md:shadow-[0_24px_48px_rgba(0,0,0,0.18)]">
-            {items.map((item) => (
-              <Link
-                aria-current={item.current ? "page" : undefined}
-                className={cn(
-                  item.cta
-                    ? `${navText} inline-flex items-center justify-center rounded-full border border-white/25 bg-paper px-[1.35rem] py-[0.95rem] text-[#15120f] shadow-[0_16px_40px_rgba(8,7,5,0.22)] transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[3px] hover:bg-[#fff9f1] max-md:mt-2 max-md:w-full`
-                    : `${navText} text-paper/78 transition-colors duration-200 hover:text-[#fff8ee] max-md:block max-md:px-1 max-md:py-3`,
-                )}
-                href={item.href}
-                key={`${item.label}-${item.href}`}
-                onClick={closeMenu}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <div className="flex items-center max-md:block max-md:min-h-0">
+            <div className="flex items-center gap-6 max-md:grid max-md:gap-1 max-md:rounded-[1.2rem] max-md:border max-md:border-white/12 max-md:bg-background/88 max-md:p-5 max-md:shadow-[0_24px_48px_rgba(0,0,0,0.25)] max-md:backdrop-blur-xl">
+              {items.map((item) => (
+                <Link
+                  aria-current={item.current ? "page" : undefined}
+                  className={cn(
+                    item.cta
+                      ? `${navText} inline-flex items-center justify-center rounded-full border border-white/25 bg-paper px-[1.35rem] py-[0.95rem] text-[#15120f] shadow-[0_16px_40px_rgba(8,7,5,0.22)] transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[3px] hover:bg-[#fff9f1] max-md:mt-3 max-md:w-full`
+                      : `${navText} text-paper/78 whitespace-nowrap transition-colors duration-200 hover:text-[#fff8ee] max-md:block max-md:px-2 max-md:py-3.5 max-md:border-b max-md:border-white/5 last-of-type:border-0`,
+                  )}
+                  href={item.href}
+                  key={`${item.label}-${item.href}`}
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -16,8 +16,8 @@ const officeCards = [
 ];
 
 const directContact = {
-  phoneLabel: "704-780-1369",
-  phoneHref: "tel:7047801369",
+  phoneLabel: "704-780-1368",
+  phoneHref: "tel:7047801368",
   emailLabel: "support@vkr-ventures.com",
   emailHref: "mailto:support@vkr-ventures.com",
 };
