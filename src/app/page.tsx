@@ -123,6 +123,7 @@ const marketTape = [
 const navItems = [
   { label: "About", href: "/#about" },
   { label: "Focus", href: "/#focus" },
+  { label: "NirvanaLuxe", href: "/#brand" },
   { label: "Portfolio", href: "/#portfolio" },
   { label: "Contact", href: "/contact", cta: true },
 ];
@@ -246,15 +247,18 @@ export default function Home() {
         </section>
 
         {/* Divider between About and Focus */}
-        <div className="h-px bg-[linear-gradient(90deg,transparent_5%,rgba(23,20,17,0.10)_30%,rgba(23,20,17,0.10)_70%,transparent_95%)]" />
-        <section className={`${section} pt-14 bg-[radial-gradient(circle_at_0%_0%,rgba(255,255,255,1)_0%,transparent_60%),radial-gradient(circle_at_100%_100%,rgba(197,143,82,0.15)_0%,transparent_60%),linear-gradient(145deg,#faf8f5_0%,#e8e0d2_100%)] text-ink`} id="focus">
+        <div className="h-px bg-[linear-gradient(90deg,transparent_5%,rgba(255,255,255,0.08)_30%,rgba(255,255,255,0.08)_70%,transparent_95%)]" />
+        <section className={`${section} pt-14 bg-background text-foreground`} id="focus">
+          {/* Subtle accent glow */}
+          <div className="absolute left-1/2 top-[18%] h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(197,143,82,0.1),transparent_65%)] blur-[40px] pointer-events-none" aria-hidden="true" />
+
           <div className={shell}>
             <Reveal className="mx-auto mb-12 grid max-w-[56rem] gap-6 text-center">
-              <p className={`${label} text-ink/52`}>What We Focus On</p>
-              <h2 className={`${title} mx-auto max-w-[25ch]`}>
+              <p className={`${label} text-paper/46`}>What We Focus On</p>
+              <h2 className={`${title} mx-auto max-w-[25ch] text-[#fff8ee]`}>
                 Short-term rentals, long-term rentals, and steady operations.
               </h2>
-              <p className={`${copy} mx-auto max-w-[38rem] text-ink/76`}>
+              <p className={`${copy} mx-auto max-w-[38rem] text-paper/72`}>
                 That is the core story. The rest of the website should support it, not inflate it.
               </p>
             </Reveal>
@@ -263,7 +267,7 @@ export default function Home() {
               {pillars.map((pillar, index) => (
                 <Reveal
                   as="article"
-                  className={`${lightCard} grid min-h-96 gap-5 overflow-hidden p-[1.7rem] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2`}
+                  className={`${darkCard} grid min-h-96 gap-5 overflow-hidden p-[1.7rem] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2`}
                   delay={index * 120}
                   key={pillar.title}
                 >
@@ -273,13 +277,71 @@ export default function Home() {
                       backgroundImage: `url('${["/images/pillar-str.png", "/images/pillar-ltr.png", "/images/pillar-ops.png"][index]}')`,
                     }}
                   />
-                  <span className={`${label} text-ink/40`}>0{index + 1}</span>
-                  <h3 className="font-display text-[clamp(1.6rem,2.5vw,2.1rem)] leading-[1.05] tracking-[-0.03em] text-ink">
+                  <span className={`${label} text-paper/40`}>0{index + 1}</span>
+                  <h3 className="font-display text-[clamp(1.6rem,2.5vw,2.1rem)] leading-[1.05] tracking-[-0.03em] text-[#fff8ee]">
                     {pillar.title}
                   </h3>
-                  <p className={`${copy} text-ink/68`}>{pillar.description}</p>
+                  <p className={`${copy} text-paper/68`}>{pillar.description}</p>
                 </Reveal>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Divider between Focus and NirvanaLuxe Brand */}
+        <div className="h-px bg-[linear-gradient(90deg,transparent_5%,rgba(23,20,17,0.10)_30%,rgba(23,20,17,0.10)_70%,transparent_95%)]" />
+        
+        <section className={`${section} bg-[radial-gradient(circle_at_0%_0%,rgba(255,255,255,1)_0%,transparent_60%),radial-gradient(circle_at_100%_100%,rgba(197,143,82,0.15)_0%,transparent_60%),linear-gradient(145deg,#faf8f5_0%,#e8e0d2_100%)] text-ink`} id="brand">
+          <div className={shell}>
+            <div className="grid grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-12 items-center max-xl:grid-cols-1">
+              <Reveal className="grid gap-6 justify-items-center text-center p-8 border border-ink/8 bg-white/84 shadow-[0_28px_60px_rgba(24,19,14,0.08)] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2" distance="left">
+                <div className="relative w-48 h-48 flex items-center justify-center p-4 bg-white rounded-xl border border-ink/4">
+                  <img
+                    src="/images/nirvanaluxe-logo.png"
+                    alt="NirvanaLuxe Logo"
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <div className="grid gap-1">
+                  <span className={`${label} text-ink/50`}>Hospitality Brand</span>
+                  <h3 className="font-display text-[2.2rem] font-bold leading-none tracking-[-0.03em] text-ink">
+                    NirvanaLuxe
+                  </h3>
+                  <span className="text-[0.74rem] uppercase tracking-wider text-accent font-semibold mt-1">
+                    A registered DBA of VKR Ventures LLC
+                  </span>
+                </div>
+              </Reveal>
+
+              <Reveal className="grid gap-6" delay={120} distance="right">
+                <div className="grid gap-4">
+                  <span className={`${label} text-ink/52`}>Our Luxury Vacation Brand</span>
+                  <h2 className={title}>
+                    Premium Vacation Rentals, Curated by NirvanaLuxe
+                  </h2>
+                  <p className={`${copy} text-ink/76`}>
+                    <strong>NirvanaLuxe</strong> is the luxury vacation rental brand of VKR Ventures — specializing exclusively in premium short-term stays. From handpicked mountain cabins in the Great Smoky Mountains to lakefront retreats on Lake Norman, every property is curated for exceptional guest experiences.
+                  </p>
+                  <p className={`${copy} text-ink/76`}>
+                    While VKR Ventures manages the full rental portfolio — including long-term residential holdings — NirvanaLuxe is where the hospitality comes alive: dynamic pricing, 24/7 guest communication, professional photography, and five-star service standards.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-6 max-md:grid-cols-1 pt-2">
+                  <div className="border-l-2 border-accent pl-4 py-1">
+                    <h4 className="font-display text-lg font-bold text-ink mb-1">NirvanaLuxe — Vacation Rentals</h4>
+                    <p className="text-xs sm:text-sm text-ink/70 leading-relaxed">
+                      Luxury cabins in Sevierville, Gatlinburg, and the Smokies corridor. Premium lakefront getaways on Lake Norman. Direct booking, dynamic pricing, and concierge-level guest care.
+                    </p>
+                  </div>
+                  <div className="border-l-2 border-ink/20 pl-4 py-1">
+                    <h4 className="font-display text-lg font-bold text-ink mb-1">VKR Ventures — Long-Term Rentals</h4>
+                    <p className="text-xs sm:text-sm text-ink/70 leading-relaxed">
+                      Durable townhomes and single-family rentals across the Charlotte metro and Concord — built for tenant stability, lease durability, and long-term asset appreciation.
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </section>
