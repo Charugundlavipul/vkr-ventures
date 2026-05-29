@@ -207,7 +207,7 @@ export default function Home() {
                   {/* Top badge */}
                   <div className="relative z-10 flex items-start">
                     <span className="rounded-full border border-white/14 bg-white/8 backdrop-blur-sm px-4 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-paper/80">
-                      Charlotte & Concord
+                      Greater Charlotte Area
                     </span>
                   </div>
 
