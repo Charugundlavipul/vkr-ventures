@@ -156,7 +156,7 @@ export default function Home() {
                 <div className="mt-2 grid grid-cols-2 gap-4 max-md:grid-cols-1">
                   {[
                     { label: "Founded", value: "Sevierville, Tennessee" },
-                    { label: "Regional Reach", value: "Charlotte through Concord" },
+                    { label: "Regional Reach", value: "Greater Charlotte Area" },
                     { label: "Strategy", value: "Buy, hold, operate" },
                     { label: "Hospitality Brand", value: "NirvanaLuxe" },
                   ].map((fact) => (
@@ -437,9 +437,9 @@ export default function Home() {
                     desc: "Cabin inventory centered on family travel, shoulder-season durability, and guest experiences that support repeat demand.",
                   },
                   {
-                    title: "Parkway Flex Suites",
-                    location: "109 Parkway, Sevier County",
-                    desc: "Furnished stays with clear standards and a streamlined operating model built for consistent performance.",
+                    title: "Charlotte Lakeside Retreats",
+                    location: "Lake Norman & Surrounding",
+                    desc: "Premium waterfront properties offering luxury amenities, seamless guest experiences, and year-round vacation appeal.",
                   },
                 ].map((property) => (
                   <article
