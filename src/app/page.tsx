@@ -128,10 +128,10 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
                   <span className={`${label} relative z-[1] text-paper/70`}>Operating Base</span>
                   <h3 className="relative z-[1] font-display text-[clamp(1.8rem,3vw,2.7rem)] leading-[1.05] tracking-[-0.03em] text-paper">
-                    Sevierville anchored
+                    Charlotte anchored
                   </h3>
                   <p className={`${copy} relative z-[1] text-paper/78`}>
-                    A Smokies-facing presence built around rental operations,
+                    A North Carolina presence built around rental operations,
                     stay quality, and assets that hold value year-round.
                   </p>
                 </div>
@@ -140,7 +140,7 @@ export default function Home() {
               <Reveal className="grid content-center gap-6 pt-1" delay={120} distance="right">
                 <p className={`${label} text-ink/52`}>About VKR</p>
                 <h2 className={`${title} max-w-[24ch]`}>
-                  Based in Sevierville, with a Charlotte-region footprint.
+                  Based in Charlotte, North Carolina.
                 </h2>
                 <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
                   VKR Ventures is a rental-focused business founded on a simple conviction:
@@ -148,14 +148,14 @@ export default function Home() {
                   over time.
                 </p>
                 <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
-                  From our base in Sevierville, Tennessee, we manage properties across
-                  the Smokies and the Charlotte metro — selecting assets for location
+                  From our base in Charlotte, North Carolina, we manage properties across
+                  the Charlotte metro — selecting assets for location
                   strength, operating fit, and long-term hold quality.
                 </p>
 
                 <div className="mt-2 grid grid-cols-2 gap-4 max-md:grid-cols-1">
                   {[
-                    { label: "Founded", value: "Sevierville, Tennessee" },
+                    { label: "Founded", value: "Charlotte, North Carolina" },
                     { label: "Regional Reach", value: "Greater Charlotte Area" },
                     { label: "Strategy", value: "Buy, hold, operate" },
                     { label: "Hospitality Brand", value: "NirvanaLuxe" },
@@ -249,7 +249,7 @@ export default function Home() {
                   {/* Top badges */}
                   <div className="relative z-10 flex items-start justify-between flex-wrap gap-2">
                     <span className="rounded-full border border-white/14 bg-white/8 backdrop-blur-sm px-4 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-paper/80">
-                      Smokies & Lake Norman
+                      Tennessee and North Carolina
                     </span>
                   </div>
 
@@ -341,14 +341,14 @@ export default function Home() {
               <Reveal className="grid grid-rows-[1fr_1fr_auto] gap-4" delay={120} distance="right">
                 {[
                   {
-                    title: "Charlotte Corporate Townhomes",
-                    location: "South End, NoDa, Plaza Midwood",
-                    desc: "Townhome-style rentals suited to relocation demand, neighborhood identity, and long-term stability in strong submarkets.",
+                    title: "Top School District Rentals",
+                    location: "Highly-rated educational zones",
+                    desc: "Single-family homes situated in Charlotte's most sought-after school districts, designed to attract long-term families and ensure community stability.",
                   },
                   {
-                    title: "Concord Family Rentals",
-                    location: "Charlotte metro north",
-                    desc: "Duplex and single-family rentals that balance regional demand, metro access, and ownership discipline.",
+                    title: "Suburban Family Homes",
+                    location: "Greater Charlotte Area",
+                    desc: "Spacious residential properties located near parks and community centers, focusing on high tenant retention and steady asset appreciation.",
                   },
                 ].map((property) => (
                   <article
@@ -536,8 +536,8 @@ export default function Home() {
                   <span className={`${label} text-paper/48`}>Best fit</span>
                   <div className="grid gap-3">
                     {[
-                      "Short-term vacation rentals in the Smokies — via NirvanaLuxe",
-                      "Long-term residential rentals in the Charlotte region",
+                      "Short-term vacation rentals in Tennessee and North Carolina — via NirvanaLuxe",
+                      "Long-term residential rentals in the Greater Charlotte Area",
                     ].map((field) => (
                       <span
                         className="border border-white/12 bg-white/3 px-[1.1rem] py-4 text-paper/72"
@@ -563,12 +563,12 @@ export default function Home() {
             <Reveal className="grid gap-4 content-start" delay={120} distance="right">
               {[
                 {
-                  label: "Based in Tennessee",
+                  label: "Tennessee Address",
                   value: "109 Parkway Suite 4C",
                   detail: "Sevierville, TN 37862",
                 },
                 {
-                  label: "Charlotte-region footprint",
+                  label: "Charlotte Address",
                   value: "2357 Herrons Nest Pl NW",
                   detail: "Concord, NC 28027",
                 },

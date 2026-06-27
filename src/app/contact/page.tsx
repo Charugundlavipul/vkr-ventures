@@ -4,12 +4,12 @@ import { SiteNav } from "../../components/site-nav";
 
 const officeCards = [
   {
-    label: "Tennessee office",
+    label: "Tennessee Address",
     title: "109 Parkway Suite 4C",
     detail: "Sevierville, TN 37862",
   },
   {
-    label: "Charlotte-region mailing",
+    label: "Charlotte Address",
     title: "2357 Herrons Nest Pl NW",
     detail: "Concord, NC 28027",
   },
