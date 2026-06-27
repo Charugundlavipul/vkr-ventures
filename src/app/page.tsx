@@ -14,16 +14,6 @@ const navItems = [
 
 const guides = [
   {
-    title: "Sevierville",
-    copy: "Gateway inventory for Smokies demand and stay-driven revenue.",
-    image: "/images/guide-sevierville.png",
-  },
-  {
-    title: "Gatlinburg",
-    copy: "Hospitality-led product where experience and upkeep drive returns.",
-    image: "/images/guide-gatlinburg.png",
-  },
-  {
     title: "Charlotte",
     copy: "Urban rental demand built on neighborhood identity and access.",
     image: "/images/guide-charlotte.png",
@@ -32,6 +22,16 @@ const guides = [
     title: "Concord",
     copy: "Charlotte-region practicality with room for durable long-term holds.",
     image: "/images/guide-concord.png",
+  },
+  {
+    title: "Sevierville",
+    copy: "Gateway inventory for Smokies demand and stay-driven revenue.",
+    image: "/images/guide-sevierville.png",
+  },
+  {
+    title: "Gatlinburg",
+    copy: "Hospitality-led product where experience and upkeep drive returns.",
+    image: "/images/guide-gatlinburg.png",
   },
 ];
 
@@ -125,14 +125,13 @@ export default function Home() {
                   style={{ backgroundImage: "url('/images/visual-operating-base.png')" }}
                 >
                   <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/visual-operating-base.png')" }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                  <span className={`${label} relative z-[1] text-paper/70`}>Operating Base</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
+                  <span className={`${label} relative z-[1] text-paper/70`}>Our Vision</span>
                   <h3 className="relative z-[1] font-display text-[clamp(1.8rem,3vw,2.7rem)] leading-[1.05] tracking-[-0.03em] text-paper">
-                    Charlotte anchored
+                    Elevating the sales experience
                   </h3>
                   <p className={`${copy} relative z-[1] text-paper/78`}>
-                    A North Carolina presence built around rental operations,
-                    stay quality, and assets that hold value year-round.
+                    Whether you are acquiring a luxury retreat or selling a suburban family home, we bring unparalleled dedication to every transaction.
                   </p>
                 </div>
               </Reveal>
@@ -143,22 +142,20 @@ export default function Home() {
                   Based in Charlotte, North Carolina.
                 </h2>
                 <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
-                  VKR Ventures is a rental-focused business founded on a simple conviction:
-                  own carefully, operate consistently, and let disciplined holds compound
-                  over time.
+                  VKR Ventures is a premier real estate sales group founded on a simple conviction:
+                  advocate fiercely for our clients, market properties aggressively, and secure the highest possible value in every transaction.
                 </p>
                 <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
-                  From our base in Charlotte, North Carolina, we manage properties across
-                  the Charlotte metro — selecting assets for location
-                  strength, operating fit, and long-term hold quality.
+                  From our base in Charlotte, North Carolina, we represent buyers and sellers across
+                  the Charlotte metro — specializing in high-demand residential sales, strategic acquisitions, and seamless real estate transactions.
                 </p>
 
                 <div className="mt-2 grid grid-cols-2 gap-4 max-md:grid-cols-1">
                   {[
-                    { label: "Founded", value: "Charlotte, North Carolina" },
-                    { label: "Regional Reach", value: "Greater Charlotte Area" },
-                    { label: "Strategy", value: "Buy, hold, operate" },
-                    { label: "Hospitality Brand", value: "NirvanaLuxe" },
+                    { label: "Primary Focus", value: "Residential Real Estate Sales" },
+                    { label: "Core Market", value: "Greater Charlotte Area" },
+                    { label: "Client Strategy", value: "Strategic Acquisitions & Dispositions" },
+                    { label: "Service Standard", value: "White-Glove Representation" },
                   ].map((fact) => (
                     <article
                       className="grid gap-2 border border-ink/8 bg-white/82 p-[1.35rem] shadow-[0_28px_60px_rgba(24,19,14,0.08)] backdrop-blur-[12px] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2"
