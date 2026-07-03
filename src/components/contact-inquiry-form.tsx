@@ -51,7 +51,7 @@ function readField(formData: FormData, key: string) {
   return typeof value === "string" ? value.trim() : "";
 }
 
-export function ContactInquiryForm() {
+export function ContactInquiryForm({ compact = false, hideService = false }: { compact?: boolean; hideService?: boolean } = {}) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<FormStatus>(initialStatus);
 
@@ -75,11 +75,11 @@ export function ContactInquiryForm() {
     const userName = readField(formData, "name");
     const userEmail = readField(formData, "email");
     const userPhone = readField(formData, "phone") || "Not provided";
-    const serviceValue = readField(formData, "service");
+    const serviceValue = hideService ? "" : readField(formData, "service");
     const propertyLocation = readField(formData, "location") || "Not provided";
     const inquiryMessage = readField(formData, "message");
 
-    if (!userName || !userEmail || !serviceValue || !inquiryMessage) {
+    if (!userName || !userEmail || (!hideService && !serviceValue) || !inquiryMessage) {
       setStatus({
         message: "Please complete the required fields before submitting the form.",
         tone: "error",
@@ -168,13 +168,13 @@ export function ContactInquiryForm() {
       : "border-[#cddfce] bg-[#eef6ef] text-[#275638]";
 
   return (
-    <form className="mt-2 grid gap-4" onSubmit={handleSubmit}>
-      <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-        <label className="grid gap-[0.6rem]">
+    <form className={`mt-2 grid ${compact ? "gap-2.5" : "gap-4"}`} onSubmit={handleSubmit}>
+      <div className={`grid grid-cols-2 ${compact ? "gap-2.5" : "gap-4"} max-md:grid-cols-1`}>
+        <label className={`grid ${compact ? "gap-1" : "gap-[0.6rem]"}`}>
           <span className={`${label} text-ink/54`}>Full name</span>
           <input
             autoComplete="name"
-            className={`${inputBase} min-h-[3.25rem]`}
+            className={`${inputBase} ${compact ? "min-h-[2.75rem] py-[0.6rem]" : "min-h-[3.25rem]"}`}
             name="name"
             placeholder="Your name"
             required
@@ -182,11 +182,11 @@ export function ContactInquiryForm() {
           />
         </label>
 
-        <label className="grid gap-[0.6rem]">
+        <label className={`grid ${compact ? "gap-1" : "gap-[0.6rem]"}`}>
           <span className={`${label} text-ink/54`}>Email</span>
           <input
             autoComplete="email"
-            className={`${inputBase} min-h-[3.25rem]`}
+            className={`${inputBase} ${compact ? "min-h-[2.75rem] py-[0.6rem]" : "min-h-[3.25rem]"}`}
             name="email"
             placeholder="you@example.com"
             required
@@ -195,58 +195,71 @@ export function ContactInquiryForm() {
         </label>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-        <label className="grid gap-[0.6rem]">
+      {hideService ? (
+        <label className={`grid ${compact ? "gap-1" : "gap-[0.6rem]"}`}>
           <span className={`${label} text-ink/54`}>Phone</span>
           <input
             autoComplete="tel"
-            className={`${inputBase} min-h-[3.25rem]`}
+            className={`${inputBase} ${compact ? "min-h-[2.75rem] py-[0.6rem]" : "min-h-[3.25rem]"}`}
             name="phone"
             placeholder="Optional"
             type="tel"
           />
         </label>
+      ) : (
+        <div className={`grid grid-cols-2 ${compact ? "gap-2.5" : "gap-4"} max-md:grid-cols-1`}>
+          <label className={`grid ${compact ? "gap-1" : "gap-[0.6rem]"}`}>
+            <span className={`${label} text-ink/54`}>Phone</span>
+            <input
+              autoComplete="tel"
+              className={`${inputBase} ${compact ? "min-h-[2.75rem] py-[0.6rem]" : "min-h-[3.25rem]"}`}
+              name="phone"
+              placeholder="Optional"
+              type="tel"
+            />
+          </label>
 
-        <label className="grid gap-[0.6rem]">
-          <span className={`${label} text-ink/54`}>Service needed</span>
-          <div className="relative">
-            <select
-              className={`${inputBase} min-h-[3.25rem] appearance-none pr-12`}
-              defaultValue=""
-              name="service"
-              required
-            >
-              <option value="" disabled>
-                Select a service
-              </option>
-              <option value="short-term">Short-term property management</option>
-              <option value="long-term">Long-term property management</option>
-              <option value="both">Both</option>
-            </select>
-            <span className="pointer-events-none absolute right-5 top-1/2 h-[0.55rem] w-[0.55rem] -translate-y-[60%] rotate-45 border-b-[1.5px] border-r-[1.5px] border-ink/54" />
-          </div>
-        </label>
-      </div>
+          <label className={`grid ${compact ? "gap-1" : "gap-[0.6rem]"}`}>
+            <span className={`${label} text-ink/54`}>Service needed</span>
+            <div className="relative">
+              <select
+                className={`${inputBase} ${compact ? "min-h-[2.75rem] py-[0.6rem]" : "min-h-[3.25rem]"} appearance-none pr-12`}
+                defaultValue=""
+                name="service"
+                required
+              >
+                <option value="" disabled>
+                  Select a service
+                </option>
+                <option value="short-term">Short-term property management</option>
+                <option value="long-term">Long-term property management</option>
+                <option value="both">Both</option>
+              </select>
+              <span className="pointer-events-none absolute right-5 top-1/2 h-[0.55rem] w-[0.55rem] -translate-y-[60%] rotate-45 border-b-[1.5px] border-r-[1.5px] border-ink/54" />
+            </div>
+          </label>
+        </div>
+      )}
 
-      <label className="grid gap-[0.6rem]">
+      <label className={`grid ${compact ? "gap-1" : "gap-[0.6rem]"}`}>
         <span className={`${label} text-ink/54`}>Property location</span>
         <input
           autoComplete="address-level2"
-          className={`${inputBase} min-h-[3.25rem]`}
+          className={`${inputBase} ${compact ? "min-h-[2.75rem] py-[0.6rem]" : "min-h-[3.25rem]"}`}
           name="location"
           placeholder="City, area, or property address"
           type="text"
         />
       </label>
 
-      <label className="grid gap-[0.6rem]">
+      <label className={`grid ${compact ? "gap-1" : "gap-[0.6rem]"}`}>
         <span className={`${label} text-ink/54`}>Message</span>
         <textarea
-          className={`${inputBase} min-h-40 resize-y`}
+          className={`${inputBase} ${compact ? "min-h-[4.5rem] resize-none" : "min-h-40 resize-y"}`}
           name="message"
           placeholder="Tell us about the property, current use, and what help you need."
           required
-          rows={7}
+          rows={compact ? 3 : 7}
         />
       </label>
 
