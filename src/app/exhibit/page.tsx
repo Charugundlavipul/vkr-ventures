@@ -66,19 +66,30 @@ export default function ExhibitBoothPage() {
 
           {/* Left: Branding */}
           <div className="flex shrink-0 flex-col gap-3 max-lg:items-center max-lg:text-center">
-            <div className="h-16 w-16 overflow-hidden rounded-[0.75rem] border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.4)] max-lg:h-12 max-lg:w-12">
-              <img
-                alt="NirvanaLuxe Logo"
-                className="h-full w-full object-cover"
-                src="/images/nirvanaluxe-logo.jpg"
-              />
+            {/* Dual logos */}
+            <div className="flex items-center gap-3">
+              <div className="h-14 w-14 overflow-hidden rounded-[0.75rem] border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.4)] max-lg:h-11 max-lg:w-11">
+                <img
+                  alt="VKR Ventures Logo"
+                  className="h-full w-full object-cover"
+                  src="/images/vkr-ventures.jpeg"
+                />
+              </div>
+              <span className="text-[1.2rem] font-light text-paper/30">&times;</span>
+              <div className="h-14 w-14 overflow-hidden rounded-[0.75rem] border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.4)] max-lg:h-11 max-lg:w-11">
+                <img
+                  alt="NirvanaLuxe Logo"
+                  className="h-full w-full object-cover"
+                  src="/images/nirvanaluxe-logo.jpg"
+                />
+              </div>
             </div>
             <div className="flex flex-col gap-1">
-              <h1 className={`${title} text-[clamp(2.2rem,4vw,3.2rem)] text-paper`}>
-                NirvanaLuxe
+              <h1 className={`${title} text-[clamp(2rem,3.8vw,2.8rem)] text-paper`}>
+                VKR Ventures <span className="text-paper/35">&</span> NirvanaLuxe
               </h1>
               <p className={`${label} text-paper/50`}>
-                by VKR Ventures
+                Premium Property Management
               </p>
             </div>
             <p className={`${copy} max-w-[28ch] text-paper/60 max-lg:max-w-[36ch]`}>
