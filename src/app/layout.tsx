@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   title: "VKR Ventures | Tennessee and Charlotte Rental Ventures",
   description:
     "VKR Ventures LLC focuses on short-term and long-term rental opportunities across Sevierville, the Smokies, and the Charlotte region.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+    ],
+    apple: [
+      { url: "/icon.png", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
