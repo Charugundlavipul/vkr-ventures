@@ -1,4 +1,4 @@
-import { ContactInquiryForm } from "../../components/contact-inquiry-form";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -174,7 +174,16 @@ export default function ExhibitBoothPage() {
                 </h2>
               </div>
 
-              <ContactInquiryForm compact hideService />
+              <iframe
+                data-tally-src="https://tally.so/embed/D4P8zb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
+                width="100%"
+                height="200"
+                frameBorder={0}
+                marginHeight={0}
+                marginWidth={0}
+                title="VKR Ventures Interest Form"
+              />
             </div>
           </div>
 
