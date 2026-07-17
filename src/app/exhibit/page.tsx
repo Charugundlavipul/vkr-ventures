@@ -159,17 +159,14 @@ export default function ExhibitBoothPage() {
           {/* ═══ Right: Compact contact form ═══ */}
           <div className="w-full max-w-[540px] max-lg:max-w-[400px] max-md:max-w-full">
             <div
-              className="rounded-2xl border border-[rgba(197,143,82,0.18)] p-7 shadow-[0_32px_80px_rgba(0,0,0,0.4),0_0_30px_rgba(197,143,82,0.04)] backdrop-blur-xl max-lg:p-4 max-md:p-4 max-h-[90dvh] overflow-y-auto"
-              style={{
-                background:
-                  "linear-gradient(145deg, rgba(10,14,26,0.85) 0%, rgba(10,14,26,0.95) 100%)",
-              }}
+              className="rounded-2xl border border-white p-7 shadow-[0_32px_80px_rgba(0,0,0,0.4)] max-lg:p-4 max-md:p-4 max-h-[90dvh] overflow-y-auto"
+              style={{ background: "#ffffff" }}
             >
               <div className="grid gap-1.5 pb-2 max-lg:pb-1">
-                <p className="text-[0.75rem] uppercase tracking-[0.2em] leading-[1.3] text-[#c58f52]/60 max-lg:text-[0.62rem]">
+                <p className="text-[0.75rem] uppercase tracking-[0.2em] leading-[1.3] text-[#171411]/50 max-lg:text-[0.62rem]">
                   Get in touch
                 </p>
-                <h2 className="font-display text-[clamp(1.2rem,2.2vw,1.75rem)] font-medium leading-[1.05] tracking-[-0.04em] text-[#f4efe6]">
+                <h2 className="font-display text-[clamp(1.2rem,2.2vw,1.75rem)] font-medium leading-[1.05] tracking-[-0.04em] text-[#171411]">
                   Tell us what you need.
                 </h2>
               </div>
