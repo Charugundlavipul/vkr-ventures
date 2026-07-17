@@ -159,7 +159,7 @@ export default function ExhibitBoothPage() {
           {/* ═══ Right: Compact contact form ═══ */}
           <div className="w-full max-w-[540px] max-lg:max-w-[400px] max-md:max-w-full">
             <div
-              className="rounded-2xl border border-[rgba(197,143,82,0.18)] p-7 shadow-[0_32px_80px_rgba(0,0,0,0.4),0_0_30px_rgba(197,143,82,0.04)] backdrop-blur-xl max-lg:p-4 max-md:p-4"
+              className="rounded-2xl border border-[rgba(197,143,82,0.18)] p-7 shadow-[0_32px_80px_rgba(0,0,0,0.4),0_0_30px_rgba(197,143,82,0.04)] backdrop-blur-xl max-lg:p-4 max-md:p-4 max-h-[90dvh] overflow-y-auto"
               style={{
                 background:
                   "linear-gradient(145deg, rgba(244,239,230,0.94) 0%, rgba(244,239,230,0.98) 100%)",
@@ -178,7 +178,7 @@ export default function ExhibitBoothPage() {
                 data-tally-src="https://tally.so/embed/D4P8zb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
                 loading="lazy"
                 width="100%"
-                height="200"
+                height="450"
                 frameBorder={0}
                 marginHeight={0}
                 marginWidth={0}
