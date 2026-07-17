@@ -159,7 +159,7 @@ export default function ExhibitBoothPage() {
           {/* ═══ Right: Compact contact form ═══ */}
           <div className="w-full max-w-[540px] max-lg:max-w-[400px] max-md:max-w-full">
             <div
-              className="rounded-2xl border border-white p-7 shadow-[0_32px_80px_rgba(0,0,0,0.4)] max-lg:p-4 max-md:p-4 max-h-[90dvh] overflow-y-auto"
+              className="rounded-2xl border border-white p-7 shadow-[0_32px_80px_rgba(0,0,0,0.4)] max-lg:p-4 max-md:p-4 overflow-hidden"
               style={{ background: "#ffffff" }}
             >
               <div className="grid gap-1.5 pb-2 max-lg:pb-1">
@@ -171,16 +171,19 @@ export default function ExhibitBoothPage() {
                 </h2>
               </div>
 
-              <iframe
-                data-tally-src="https://tally.so/embed/D4P8zb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                loading="lazy"
-                width="100%"
-                height="450"
-                frameBorder={0}
-                marginHeight={0}
-                marginWidth={0}
-                title="VKR Ventures Interest Form"
-              />
+              {/* Zoom wrapper: shrinks form on tablet so entire form fits without scrolling */}
+              <div className="max-lg:[zoom:0.70] max-xl:[zoom:0.80] xl:[zoom:1]">
+                <iframe
+                  data-tally-src="https://tally.so/embed/D4P8zb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  loading="lazy"
+                  width="100%"
+                  height="600"
+                  frameBorder={0}
+                  marginHeight={0}
+                  marginWidth={0}
+                  title="VKR Ventures Interest Form"
+                />
+              </div>
             </div>
           </div>
 
