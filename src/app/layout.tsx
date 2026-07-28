@@ -15,9 +15,9 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "VKR Ventures | Tennessee and Charlotte Rental Ventures",
+  title: "VKR Ventures | Tennessee and North Carolina Rental Ventures",
   description:
-    "VKR Ventures LLC focuses on short-term and long-term rental opportunities across Sevierville, the Smokies, and the Charlotte region.",
+    "VKR Ventures LLC focuses on short-term and long-term rental opportunities across Tennessee and North Carolina.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },

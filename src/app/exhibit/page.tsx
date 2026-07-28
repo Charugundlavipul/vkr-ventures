@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "VKR Ventures & NirvanaLuxe | Exhibit Booth",
   description:
-    "Connect with VKR Ventures & NirvanaLuxe at our exhibit booth. Property sales & management across Tennessee and the Charlotte region.",
+    "Connect with VKR Ventures & NirvanaLuxe at our exhibit booth. Property sales & management across Tennessee and North Carolina.",
 };
 
 export default function ExhibitBoothPage() {
@@ -138,7 +138,7 @@ export default function ExhibitBoothPage() {
 
             {/* Service highlights */}
             <div className="flex flex-wrap items-center justify-center gap-2.5 max-lg:gap-1.5">
-              {["Greater Charlotte Area", "Tennessee"].map((loc) => (
+              {["North Carolina", "Tennessee"].map((loc) => (
                 <span
                   className="inline-flex items-center rounded-full border border-[rgba(197,143,82,0.2)] bg-[rgba(197,143,82,0.06)] px-4 py-1.5 text-[0.65rem] uppercase tracking-[0.16em] text-[#c58f52]/70 backdrop-blur-sm max-lg:px-2.5 max-lg:py-1 max-lg:text-[0.5rem]"
                   key={loc}

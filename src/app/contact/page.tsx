@@ -25,7 +25,7 @@ const directContact = {
 const serviceNotes = [
   "Short-term property management",
   "Long-term property management",
-  "Smokies and Charlotte-region properties",
+  "Tennessee and North Carolina properties",
 ];
 
 const navItems = [
@@ -68,8 +68,8 @@ export default function ContactPage() {
                 Contact VKR Ventures.
               </h1>
               <p className={`${copy} max-w-[38rem] text-paper/76`}>
-                Tell us if you need short-term or long-term property management in the Smokies or
-                the Charlotte region.
+                Tell us if you need short-term or long-term property management in
+                Tennessee or North Carolina.
               </p>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   </h2>
                   <p className={`${copy} text-ink/70`}>
                     Property management focused on short-term and long-term rentals across
-                    Tennessee and the Charlotte region.
+                    Tennessee and North Carolina.
                   </p>
 
                   <article className="grid gap-2 pt-1">

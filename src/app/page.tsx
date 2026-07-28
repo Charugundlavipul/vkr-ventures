@@ -94,10 +94,10 @@ export default function Home() {
                   Turning Properties into Trusted Stays
                 </h1>
 
-                <p className="max-w-[42rem] text-[clamp(1rem,1.7vw,1.08rem)] leading-[1.8] text-[#fff8ee]/82 max-md:text-[0.95rem] max-md:leading-[1.7] max-md:px-2">
-                  Based in Sevierville, VKR Ventures specializes in both short-term
+                <p className={`max-w-[42rem] text-[clamp(1rem,1.7vw,1.08rem)] leading-[1.8] text-[#fff8ee]/82 max-md:text-[0.95rem] max-md:leading-[1.7] max-md:px-2`}>
+                  Based in Tennessee and North Carolina, VKR Ventures specializes in both short-term
                   vacation rentals and long-term residential properties across
-                  Tennessee and the Charlotte region.
+                  Tennessee and North Carolina.
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4 mt-2">
@@ -139,15 +139,15 @@ export default function Home() {
               <Reveal className="grid content-center gap-6 pt-1" delay={120} distance="right">
                 <p className={`${label} text-ink/52`}>About VKR</p>
                 <h2 className={`${title} max-w-[24ch]`}>
-                  Based in Charlotte, North Carolina.
+                  Based in Tennessee and North Carolina.
                 </h2>
                 <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
                   VKR Ventures is a premier real estate sales group founded on a simple conviction:
                   advocate fiercely for our clients, market properties aggressively, and secure the highest possible value in every transaction.
                 </p>
                 <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
-                  From our base in Charlotte, North Carolina, we represent buyers and sellers across
-                  the Charlotte metro — specializing in high-demand residential sales, strategic acquisitions, and seamless real estate transactions.
+                  From our base in Tennessee and North Carolina, we represent buyers and sellers across
+                  multiple markets — specializing in high-demand residential sales, strategic acquisitions, and seamless real estate transactions.
                 </p>
 
                 <div className="mt-2 grid grid-cols-2 gap-4 max-md:grid-cols-1">
@@ -520,7 +520,7 @@ export default function Home() {
               <Reveal className="grid gap-6" distance="left">
                 <p className={`${label} text-paper/46`}>Connect</p>
                 <h2 className={`${title} max-w-[40ch] text-[#fff8ee]`}>
-                  Looking at a rental opportunity in Tennessee or the Charlotte region?
+                  Looking at a rental opportunity in Tennessee or North Carolina?
                 </h2>
                 <p className={`${copy} max-w-[38rem] text-paper/70`}>
                   Whether it is a long-term hold in the Charlotte metro or a vacation rental
