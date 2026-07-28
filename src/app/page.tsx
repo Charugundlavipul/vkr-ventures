@@ -142,7 +142,7 @@ export default function Home() {
                   Based in Tennessee and North Carolina.
                 </h2>
                 <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
-                  VKR Ventures is a premier real estate sales group founded on a simple conviction:
+                  VKR Ventures is a premier real estate company founded on a simple conviction:
                   advocate fiercely for our clients, market properties aggressively, and secure the highest possible value in every transaction.
                 </p>
                 <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
