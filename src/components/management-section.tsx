@@ -55,27 +55,27 @@ export function ManagementSection({ services }: ManagementSectionProps) {
         </div>
 
         <div className="grid grid-cols-[0.82fr_1.18fr] overflow-hidden border border-white/10 bg-[#122036] text-[#f4efe6] shadow-[0_30px_70px_rgba(18,32,54,0.2)] max-lg:grid-cols-1">
-          <div className="grid content-between gap-12 border-r border-white/12 p-10 max-lg:border-b max-lg:border-r-0 max-md:p-6">
-            <div className="grid gap-5">
-              <span className={`${label} text-[#c58f52]`}>Monthly management</span>
-              <div className="flex items-start gap-3">
-                <span className="mt-4 font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-none text-[#c58f52]">$</span>
+          <div className="grid content-start gap-10 border-r border-white/12 p-10 max-lg:border-b max-lg:border-r-0 max-md:p-6">
+            <div className="grid">
+              <span className={`${label} text-[#c58f52]`}>Management starts at</span>
+              <div className="mt-0 flex items-end gap-2 pb-10">
+                <span className="mb-4 font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-none text-[#c58f52]">$</span>
                 <strong
-                  className="font-display font-medium leading-[0.76] tracking-[-0.08em] text-[#e0ad68]"
-                  style={{ fontSize: "clamp(7rem, 13vw, 10rem)" }}
+                  className="block font-display font-medium tracking-[-0.08em] text-[#e0ad68]"
+                  style={{ fontSize: "clamp(7rem, 13vw, 10rem)", lineHeight: 0.72 }}
                 >
                   75
                 </strong>
               </div>
-              <div className="grid gap-2 border-t border-white/15 pt-5">
-                <strong className="text-lg text-[#fff8ee]">Flat fee per unit, per month</strong>
+              <div className="grid gap-3">
+                <strong className="text-lg text-[#fff8ee]">Per unit, per month</strong>
                 <p className="max-w-[27rem] text-sm leading-[1.75] text-[#f4efe6]/62">
                   Predictable pricing with no percentage increase on higher-rent homes.
                 </p>
               </div>
             </div>
 
-            <div className="grid gap-3">
+            <div className="grid gap-3 border-t border-white/12 pt-8">
               <Link
                 className="group flex items-center justify-between bg-[#fff8ee] px-6 py-4 text-[0.76rem] font-semibold uppercase tracking-[0.18em] text-[#122036] transition hover:bg-white"
                 href="/contact"

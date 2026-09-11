@@ -108,29 +108,29 @@ const managementServices = [
 const areas = [
   {
     name: "Charlotte",
-    price: "About $430K",
-    context: "Recent city median",
-    copy: "The region's employment center, with a wide mix of urban homes, established neighborhoods, townhomes, and suburban rental demand.",
+    price: "$500K+",
+    context: "Single-family search range",
+    copy: "The region's employment center, with established neighborhoods, urban single-family homes, and strong suburban rental demand.",
     image: "/images/guide-charlotte.png",
   },
   {
     name: "Concord & Kannapolis",
-    price: "$320K–$365K",
-    context: "Recent city medians",
+    price: "$450K+",
+    context: "Single-family search range",
     copy: "Northeast of Charlotte, these Cabarrus County markets can offer approachable entry points with commuter access and growing local amenities.",
     image: "/images/guide-concord.png",
   },
   {
     name: "Mooresville & Lake Norman",
-    price: "About $510K+",
-    context: "Recent Mooresville median",
+    price: "$400K+",
+    context: "Single-family search range",
     copy: "A north-metro market shaped by lake access, varied housing stock, and demand from households balancing lifestyle with Charlotte connectivity.",
     image: "/images/asset-charlotte.png",
   },
   {
     name: "Hickory & Catawba Valley",
-    price: "$300K–$325K",
-    context: "Recent regional range",
+    price: "$375K+",
+    context: "Single-family search range",
     copy: "A value-oriented western corridor with established neighborhoods, expanding inventory, and access to the broader Charlotte-to-foothills economy.",
     image: "/images/asset-concord.png",
   },
@@ -201,7 +201,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/visual-charlotte.png')" }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
                 <div className="absolute bottom-0 z-[1] grid gap-2 p-7 text-paper">
-                  <span className={`${label} text-accent`}>Carolina focused</span>
+                  <span className={`${label} text-accent`}>North Carolina focused</span>
                   <strong className="font-display text-3xl leading-none">Sales and management, under one roof.</strong>
                 </div>
               </Reveal>
@@ -576,8 +576,8 @@ export default function Home() {
               <p className={`${label} text-ink/50`}>Nearby markets</p>
               <h2 className={title}>A quick read on four North Carolina search areas.</h2>
               <p className={`${copy} text-ink/65`}>
-                Broad market orientation only—without tying your search to a particular builder,
-                floor plan, or development.
+                Compare communities by lifestyle, location, and the kind of ownership opportunity
+                each market offers.
               </p>
             </Reveal>
 
@@ -607,7 +607,9 @@ export default function Home() {
             </div>
 
             <p className="mt-7 max-w-[58rem] text-xs leading-[1.8] text-ink/48">
-              Approximate figures are rounded from recent 2026 Canopy Realtor® Association / Canopy MLS monthly reports. Monthly medians change with the mix of homes sold and are not appraisals, forecasts, or quotes for a specific property.
+              Figures shown are broad starting points for single-family searches, not market medians,
+              appraisals, forecasts, or quotes for a specific property. Availability and pricing vary by
+              neighborhood, condition, and property features.
             </p>
           </div>
         </section>
