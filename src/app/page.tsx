@@ -1,169 +1,229 @@
 import Link from "next/link";
+import { ManagementSection } from "../components/management-section";
+import { PropertySearch } from "../components/property-search";
 import { Reveal } from "../components/reveal";
 import { SiteNav } from "../components/site-nav";
 
-/* ─── Data ──────────────────────────────────────────── */
-
 const navItems = [
   { label: "About", href: "/#about" },
-  { label: "Long-Term", href: "/#long-term" },
-  { label: "Short-Term", href: "/#short-term" },
-  { label: "Markets", href: "/#markets" },
+  { label: "Buy & Sell", href: "/#sales" },
+  { label: "Management", href: "/#management" },
+  { label: "Homes", href: "/#homes" },
+  { label: "Areas", href: "/#areas" },
   { label: "Contact", href: "/contact", cta: true },
 ];
 
-const guides = [
+const managementServices = [
   {
-    title: "Charlotte",
-    copy: "Urban rental demand built on neighborhood identity and access.",
+    category: "Marketing",
+    title: "Syndication across 30+ Platforms",
+    description:
+      "Maximum exposure across Zillow, Trulia, Realtor.com, MLS, and premier rental portals to attract qualified prospects quickly.",
+    icon: (
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+      </svg>
+    ),
+  },
+  {
+    category: "Media",
+    title: "Professional HDR Photography",
+    description:
+      "Architectural-grade wide-angle imagery and curated lighting that capture property condition and command top rental value.",
+    icon: (
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+      </svg>
+    ),
+  },
+  {
+    category: "Leasing",
+    title: "Accompanied Tenant Showings",
+    description:
+      "Vetted, in-person showings conducted by licensed brokers who represent your property and professionally qualify applicants.",
+    icon: (
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+      </svg>
+    ),
+  },
+  {
+    category: "Screening",
+    title: "Rigorous Tenant Screening",
+    description:
+      "Multi-bureau credit reports, nationwide criminal history, eviction checks, income verification, and previous landlord calls.",
+    icon: (
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+      </svg>
+    ),
+  },
+  {
+    category: "Audits",
+    title: "Move-In & Move-Out Inspections",
+    description:
+      "Comprehensive room-by-room condition reports backed with high-resolution date-stamped photos before and after tenancy.",
+    icon: (
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+      </svg>
+    ),
+  },
+  {
+    category: "Compliance",
+    title: "Security-Deposit Trust Handling",
+    description:
+      "All tenant security deposits and reserve funds held strictly in bonded, NCREC-compliant escrow trust accounts.",
+    icon: (
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+      </svg>
+    ),
+  },
+  {
+    category: "Accounting",
+    title: "Monthly Rent Collection & ACH",
+    description:
+      "Online tenant portal payments with direct ACH disbursements to your account and transparent digital monthly statements.",
+    icon: (
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+      </svg>
+    ),
+  },
+  {
+    category: "Care",
+    title: "24/7 Maintenance Coordination",
+    description:
+      "Rapid emergency handling and vetted local Carolina trades dispatched with zero markup on vendor labor or materials.",
+    icon: (
+      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.07a4.5 4.5 0 004.486-6.32l-3.27 3.287a1.5 1.5 0 01-2.122 0l-1.06-1.06a1.5 1.5 0 010-2.122l3.287-3.27a4.5 4.5 0 00-6.32 4.486c.118.58.094 1.193-.07 1.742m-.233 5.108l-.828.828" />
+      </svg>
+    ),
+  },
+];
+
+const areas = [
+  {
+    name: "Charlotte",
+    price: "About $430K",
+    context: "Recent city median",
+    copy: "The region's employment center, with a wide mix of urban homes, established neighborhoods, townhomes, and suburban rental demand.",
     image: "/images/guide-charlotte.png",
   },
   {
-    title: "Concord",
-    copy: "Charlotte-region practicality with room for durable long-term holds.",
+    name: "Concord & Kannapolis",
+    price: "$320K–$365K",
+    context: "Recent city medians",
+    copy: "Northeast of Charlotte, these Cabarrus County markets can offer approachable entry points with commuter access and growing local amenities.",
     image: "/images/guide-concord.png",
   },
   {
-    title: "Sevierville",
-    copy: "Gateway inventory for Smokies demand and stay-driven revenue.",
-    image: "/images/guide-sevierville.png",
+    name: "Mooresville & Lake Norman",
+    price: "About $510K+",
+    context: "Recent Mooresville median",
+    copy: "A north-metro market shaped by lake access, varied housing stock, and demand from households balancing lifestyle with Charlotte connectivity.",
+    image: "/images/asset-charlotte.png",
   },
   {
-    title: "Gatlinburg",
-    copy: "Hospitality-led product where experience and upkeep drive returns.",
-    image: "/images/guide-gatlinburg.png",
+    name: "Hickory & Catawba Valley",
+    price: "$300K–$325K",
+    context: "Recent regional range",
+    copy: "A value-oriented western corridor with established neighborhoods, expanding inventory, and access to the broader Charlotte-to-foothills economy.",
+    image: "/images/asset-concord.png",
   },
 ];
-
-const marketTape = [
-  "Pigeon Forge",
-  "Downtown Sevierville",
-  "Wears Valley",
-  "Knoxville",
-  "South End",
-  "NoDa",
-  "Plaza Midwood",
-  "Concord",
-  "Charlotte Metro",
-];
-
-/* ─── Tokens ────────────────────────────────────────── */
 
 const shell =
   "mx-auto w-[min(1180px,calc(100vw-48px))] max-md:w-[min(1180px,calc(100vw-32px))]";
-const section = "relative py-28 max-md:py-20 overflow-clip";
+const section = "relative overflow-clip py-28 max-md:py-20";
 const label = "text-[0.72rem] uppercase tracking-[0.2em] leading-[1.3]";
 const title =
-  "font-display text-[clamp(1.8rem,3.2vw,2.4rem)] font-medium leading-[1.05] tracking-[-0.04em]";
-const copy = "text-[clamp(1rem,1.8vw,1.08rem)] leading-[1.9]";
+  "font-display text-[clamp(2.15rem,4.2vw,3.7rem)] font-medium leading-[0.98] tracking-[-0.045em]";
+const copy = "text-[clamp(1rem,1.8vw,1.08rem)] leading-[1.85]";
 const primaryButton =
-  "inline-flex items-center justify-center rounded-full border border-white/25 bg-paper px-[1.45rem] py-4 text-[0.8rem] uppercase tracking-[0.18em] text-[#15120f] shadow-[0_16px_40px_rgba(8,7,5,0.22)] transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[3px] hover:bg-[#fff9f1]";
+  "inline-flex items-center justify-center rounded-full border border-white/25 bg-paper px-6 py-4 text-[0.76rem] uppercase tracking-[0.18em] text-[#15120f] shadow-[0_16px_40px_rgba(8,7,5,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-white";
 const secondaryButton =
-  "inline-flex items-center justify-center rounded-full border border-white/24 bg-transparent px-[1.45rem] py-4 text-[0.8rem] uppercase tracking-[0.18em] text-paper transition duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-[3px] hover:border-white/42 hover:bg-white/8";
-const darkCard =
-  "border border-white/12 bg-white/4 shadow-[0_28px_60px_rgba(0,0,0,0.16)] backdrop-blur-[18px]";
-
-/* ─── Page ──────────────────────────────────────────── */
+  "inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-6 py-4 text-[0.76rem] uppercase tracking-[0.18em] text-paper transition duration-300 hover:-translate-y-0.5 hover:bg-white/10";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden w-full flex flex-col">
+    <div className="flex min-h-screen w-full flex-col overflow-x-hidden bg-background">
       <header className="relative overflow-clip">
         <SiteNav brandHref="/#top" items={navItems} />
 
-        {/* ═══════ HERO ═══════ */}
-        <section className="relative min-h-[clamp(680px,88svh,860px)]" id="top">
+        <section className="relative min-h-[clamp(700px,92svh,900px)]" id="top">
           <div className="absolute inset-0 overflow-hidden bg-background" aria-hidden="true">
             <div
-              className="absolute inset-0 scale-[1.02] bg-cover bg-center"
+              className="absolute inset-0 scale-[1.03] bg-cover bg-center"
               style={{
                 backgroundImage:
-                  "radial-gradient(circle at 50% 22%, rgba(240, 201, 141, 0.16), transparent 26%), linear-gradient(180deg, rgba(13, 11, 8, 0.04) 0%, rgba(13, 11, 8, 0.22) 100%), url('/images/hero-ridge.png')",
+                  "linear-gradient(90deg,rgba(8,12,18,.82) 0%,rgba(8,12,18,.54) 48%,rgba(8,12,18,.38) 100%),linear-gradient(180deg,rgba(8,12,18,.16) 0%,rgba(8,12,18,.68) 100%),url('/images/hero-city.png')",
               }}
             />
-            <div className="absolute left-1/2 top-[22%] h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(197,143,82,0.22),transparent_68%)] blur-[24px]" />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,11,8,0.2)_0%,rgba(13,11,8,0.48)_100%),linear-gradient(90deg,rgba(13,11,8,0.48)_0%,rgba(13,11,8,0.26)_50%,rgba(13,11,8,0.48)_100%)] max-md:bg-[linear-gradient(180deg,rgba(13,11,8,0.4)_0%,rgba(13,11,8,0.42)_38%,rgba(13,11,8,0.68)_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_32%,rgba(197,143,82,0.2),transparent_30%)]" />
           </div>
 
           <div className={shell}>
-            <div className="relative z-[3] grid min-h-[clamp(680px,88svh,860px)] place-items-center py-24 text-center max-md:min-h-[clamp(620px,82svh,760px)] max-md:py-20">
-              <div className="grid justify-items-center gap-5">
-                <span className={`${label} text-paper/72`}>VKR Ventures</span>
-
-                <h1 className="max-w-[16ch] font-display text-[clamp(3rem,6.2vw,5.2rem)] leading-[0.92] tracking-[-0.04em] text-[#fff8ee] text-balance">
-                  Turning Properties into Trusted Stays
+            <div className="relative z-[2] grid min-h-[clamp(700px,92svh,900px)] grid-cols-[minmax(0,1fr)_18rem] items-end gap-12 pb-20 pt-36 max-lg:grid-cols-1 max-lg:items-center max-lg:pb-16 max-md:pt-28">
+              <div className="grid min-w-0 max-w-[53rem] gap-6">
+                <span className={`${label} text-accent`}>North Carolina Real Estate</span>
+                <h1 className="min-w-0 font-display text-[clamp(3.4rem,7.4vw,6.8rem)] leading-[0.86] tracking-[-0.055em] text-[#fff8ee] text-balance max-md:text-[clamp(2.85rem,13.5vw,3.35rem)] max-md:leading-[0.92]">
+                  Local guidance. Stronger property decisions.
                 </h1>
-
-                <p className={`max-w-[42rem] text-[clamp(1rem,1.7vw,1.08rem)] leading-[1.8] text-[#fff8ee]/82 max-md:text-[0.95rem] max-md:leading-[1.7] max-md:px-2`}>
-                  Based in Tennessee and North Carolina, VKR Ventures specializes in both short-term
-                  vacation rentals and long-term residential properties across
-                  Tennessee and North Carolina.
+                <p className={`${copy} max-w-[42rem] text-paper/78`}>
+                  Buy, sell, invest, or hand off the day-to-day. VKR Ventures serves Charlotte,
+                  Concord, Lake Norman, Hickory, and nearby North Carolina markets.
                 </p>
-
-                <div className="flex flex-wrap justify-center gap-4 mt-2">
-                  <a className={primaryButton} href="#long-term">
-                    Long-term rentals
-                  </a>
-                  <a className={secondaryButton} href="#short-term">
-                    Vacation rentals
-                  </a>
+                <div className="mt-2 flex flex-wrap gap-4 max-md:grid max-md:grid-cols-1">
+                  <a className={primaryButton} href="#homes">Search homes</a>
+                  <a className={secondaryButton} href="#management">Management plans</a>
                 </div>
+              </div>
+
+              <div className="grid gap-3 border-l border-white/20 pl-6 text-paper max-lg:max-w-md max-lg:border-l-0 max-lg:border-t max-lg:pl-0 max-lg:pt-5">
+                <span className={`${label} text-paper/48`}>North Carolina broker</span>
+                <strong className="font-display text-3xl leading-none text-[#fff8ee]">Vinay R</strong>
+                <span className="text-sm text-paper/68">NC Broker #346593</span>
               </div>
             </div>
           </div>
         </section>
       </header>
 
-      <main className="flex flex-col">
-        {/* ═══════ ABOUT — Clean, concise ═══════ */}
-        <section className={`${section} pb-14 bg-[radial-gradient(ellipse_80%_60%_at_30%_20%,rgba(237,228,214,0.5),transparent_60%),radial-gradient(circle_at_70%_80%,rgba(197,143,82,0.06),transparent_50%),linear-gradient(180deg,#faf7f3_0%,#f5f0ea_100%)] text-ink`} id="about">
+      <main>
+        <section className={`${section} bg-[#f6f1e9] text-ink`} id="about">
           <div className={shell}>
-            <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-12 max-xl:grid-cols-1">
-              <Reveal className="grid gap-4" distance="left">
-                <div
-                  className="group relative grid min-h-[30rem] content-end gap-3 overflow-hidden border border-ink/8 bg-paper p-6 shadow-[0_28px_60px_rgba(24,19,14,0.08)] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2"
-                  style={{ backgroundImage: "url('/images/visual-operating-base.png')" }}
-                >
-                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/visual-operating-base.png')" }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/30 to-transparent" />
-                  <span className={`${label} relative z-[1] text-paper/70`}>Our Vision</span>
-                  <h3 className="relative z-[1] font-display text-[clamp(1.8rem,3vw,2.7rem)] leading-[1.05] tracking-[-0.03em] text-paper">
-                    Elevating the sales experience
-                  </h3>
-                  <p className={`${copy} relative z-[1] text-paper/78`}>
-                    Whether you are acquiring a luxury retreat or selling a suburban family home, we bring unparalleled dedication to every transaction.
-                  </p>
+            <div className="grid grid-cols-[0.86fr_1.14fr] items-center gap-16 max-lg:grid-cols-1 max-lg:gap-10">
+              <Reveal className="relative min-h-[34rem] overflow-hidden border border-ink/10 shadow-[0_28px_70px_rgba(24,19,14,0.12)] max-md:min-h-[25rem]" distance="left">
+                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/visual-charlotte.png')" }} />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+                <div className="absolute bottom-0 z-[1] grid gap-2 p-7 text-paper">
+                  <span className={`${label} text-accent`}>Carolina focused</span>
+                  <strong className="font-display text-3xl leading-none">Sales and management, under one roof.</strong>
                 </div>
               </Reveal>
 
-              <Reveal className="grid content-center gap-6 pt-1" delay={120} distance="right">
-                <p className={`${label} text-ink/52`}>About VKR</p>
-                <h2 className={`${title} max-w-[24ch]`}>
-                  Based in Tennessee and North Carolina.
-                </h2>
-                <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
-                  VKR Ventures is a premier real estate company founded on a simple conviction:
-                  advocate fiercely for our clients, market properties aggressively, and secure the highest possible value in every transaction.
+              <Reveal className="grid gap-6" delay={100} distance="right">
+                <p className={`${label} text-ink/50`}>About VKR Ventures</p>
+                <h2 className={`${title} max-w-[19ch]`}>Real estate service built around the full ownership cycle.</h2>
+                <p className={`${copy} max-w-[42rem] text-ink/70`}>
+                  VKR Ventures helps North Carolina buyers evaluate opportunities, guides sellers
+                  through positioning and negotiations, and supports rental owners after closing.
+                  The goal is simple: clear advice, responsive execution, and fewer handoffs.
                 </p>
-                <p className={`${copy} max-w-[40rem] leading-[1.75] text-ink/76`}>
-                  From our base in Tennessee and North Carolina, we represent buyers and sellers across
-                  multiple markets — specializing in high-demand residential sales, strategic acquisitions, and seamless real estate transactions.
-                </p>
-
-                <div className="mt-2 grid grid-cols-2 gap-4 max-md:grid-cols-1">
+                <div className="grid grid-cols-3 gap-px overflow-hidden border border-ink/10 bg-ink/10 max-md:grid-cols-1">
                   {[
-                    { label: "Primary Focus", value: "Residential Real Estate Sales" },
-                    { label: "Core Market", value: "Greater Charlotte Area" },
-                    { label: "Client Strategy", value: "Strategic Acquisitions & Dispositions" },
-                    { label: "Service Standard", value: "White-Glove Representation" },
-                  ].map((fact) => (
-                    <article
-                      className="grid gap-2 border border-ink/8 bg-white/82 p-[1.35rem] shadow-[0_28px_60px_rgba(24,19,14,0.08)] backdrop-blur-[12px] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2"
-                      key={fact.label}
-                    >
-                      <span className={`${label} text-ink/50`}>{fact.label}</span>
-                      <strong className="text-base leading-[1.4] text-ink">{fact.value}</strong>
-                    </article>
+                    ["Buy", "Search and offer strategy"],
+                    ["Sell", "Pricing and presentation"],
+                    ["Manage", "Leasing through operations"],
+                  ].map(([heading, detail]) => (
+                    <div className="grid gap-2 bg-white/80 p-5" key={heading}>
+                      <strong className="font-display text-2xl">{heading}</strong>
+                      <span className="text-sm leading-relaxed text-ink/60">{detail}</span>
+                    </div>
                   ))}
                 </div>
               </Reveal>
@@ -171,430 +231,415 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════ DUAL-FOCUS SHOWCASE ═══════ */}
-        <section className="relative bg-background py-28 max-md:py-20 overflow-hidden">
-          {/* Ambient glows */}
-          <div className="absolute left-[15%] top-[20%] h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(197,143,82,0.1),transparent_60%)] blur-[60px] pointer-events-none" aria-hidden="true" />
-          <div className="absolute right-[10%] bottom-[15%] h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(197,143,82,0.06),transparent_65%)] blur-[40px] pointer-events-none" aria-hidden="true" />
-
+        <section className={`${section} bg-background text-paper`} id="sales">
           <div className={shell}>
-            {/* Section header */}
-            <Reveal className="relative z-10 mx-auto max-w-[52rem] text-center grid gap-5 mb-16 max-md:mb-12">
-              <p className={`${label} text-accent`}>What We Do</p>
-              <h2 className="font-display text-[clamp(2.2rem,4.5vw,3.6rem)] leading-[0.95] tracking-[-0.04em] text-[#fff8ee] text-balance">
-                Two rental models.<br />
-                One disciplined approach.
-              </h2>
-              <p className={`${copy} mx-auto max-w-[38rem] text-paper/64`}>
-                VKR Ventures operates across both long-term residential and short-term
-                vacation rental markets — giving investors and property owners a single
-                partner for the full spectrum of rental income.
+            <Reveal className="mb-14 grid max-w-[52rem] gap-5">
+              <p className={`${label} text-accent`}>Buy & Sell</p>
+              <h2 className={`${title} text-[#fff8ee]`}>A local advocate for both sides of the move.</h2>
+              <p className={`${copy} text-paper/65`}>
+                From a first showing to the closing table, decisions are grounded in current listings,
+                comparable sales, property condition, and your financial priorities.
               </p>
             </Reveal>
 
-            {/* Two large preview cards */}
-            <div className="grid grid-cols-2 gap-5 max-xl:grid-cols-1">
-
-              {/* Long-Term Card */}
-              <Reveal distance="left">
-                <a href="#long-term" className="group relative flex flex-col justify-between min-h-[32rem] overflow-hidden border border-white/12 p-8 shadow-[0_28px_60px_rgba(0,0,0,0.2)] transition duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:border-white/20 max-md:min-h-[28rem] max-md:p-6 max-md:gap-8">
-                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.04]" style={{ backgroundImage: "url('/images/showcase-ltr.png')" }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b08]/95 via-[#0d0b08]/60 to-[#0d0b08]/20" />
-
-                  {/* Top badge */}
-                  <div className="relative z-10 flex items-start">
-                    <span className="rounded-full border border-white/14 bg-white/8 backdrop-blur-sm px-4 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-paper/80">
-                      Greater Charlotte Area
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative z-10 grid gap-4 mt-auto">
-                    <span className={`${label} text-[#fff8ee]/70`}>Long-Term Rentals</span>
-                    <h3 className="font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-[1.02] tracking-[-0.03em] text-[#fff8ee]">
-                      Residential properties built for lease-backed stability
-                    </h3>
-                    <p className={`${copy} text-paper/68 max-w-[28rem]`}>
-                      Townhomes, duplexes, and single-family rentals in high-growth
-                      Charlotte-region neighborhoods — optimized for tenant retention
-                      and long-term asset appreciation.
-                    </p>
-
-                    {/* Stats row */}
-                    <div className="flex gap-6 mt-2 flex-wrap">
-                      {[
-                        { stat: "Charlotte", detail: "Metro focus" },
-                        { stat: "Lease-backed", detail: "Income model" },
-                        { stat: "Hold", detail: "Strategy" },
-                      ].map((s) => (
-                        <div key={s.stat} className="grid gap-0.5">
-                          <span className="text-sm font-semibold text-accent">{s.stat}</span>
-                          <span className="text-[0.68rem] uppercase tracking-widest text-paper/40">{s.detail}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </a>
-              </Reveal>
-
-              {/* Short-Term Card */}
-              <Reveal distance="right" delay={140}>
-                <a href="#short-term" className="group relative flex flex-col justify-between min-h-[32rem] overflow-hidden border border-white/12 p-8 shadow-[0_28px_60px_rgba(0,0,0,0.2)] transition duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 hover:border-white/20 max-md:min-h-[28rem] max-md:p-6 max-md:gap-8">
-                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.04]" style={{ backgroundImage: "url('/images/showcase-str.png')" }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0b08]/95 via-[#0d0b08]/60 to-[#0d0b08]/20" />
-
-                  {/* Top badges */}
-                  <div className="relative z-10 flex items-start justify-between flex-wrap gap-2">
-                    <span className="rounded-full border border-white/14 bg-white/8 backdrop-blur-sm px-4 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-paper/80">
-                      Tennessee and North Carolina
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative z-10 grid gap-4 mt-auto">
-                    <span className={`${label} text-[#fff8ee]/70`}>Vacation Rentals</span>
-                    <h3 className="font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-[1.02] tracking-[-0.03em] text-[#fff8ee]">
-                      Luxury vacation stays curated by NirvanaLuxe
-                    </h3>
-                    <p className={`${copy} text-paper/68 max-w-[28rem]`}>
-                      Premium mountain cabins and lakefront retreats —
-                      with direct booking, dynamic pricing, professional photography,
-                      and 24/7 concierge-level guest care.
-                    </p>
-
-                    {/* Stats row */}
-                    <div className="flex gap-6 mt-2 flex-wrap">
-                      {[
-                        { stat: "Smokies", detail: "Primary market" },
-                        { stat: "Dynamic", detail: "Pricing model" },
-                        { stat: "24/7", detail: "Guest support" },
-                      ].map((s) => (
-                        <div key={s.stat} className="grid gap-0.5">
-                          <span className="text-sm font-semibold text-[#fff8ee]">{s.stat}</span>
-                          <span className="text-[0.68rem] uppercase tracking-widest text-paper/40">{s.detail}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </a>
-              </Reveal>
-
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════════════════════════════════════════════════════
-            LONG-TERM RENTALS — Full independent section
-        ═══════════════════════════════════════════════════════════════ */}
-        <div className="h-px bg-[linear-gradient(90deg,transparent_5%,rgba(23,20,17,0.10)_30%,rgba(23,20,17,0.10)_70%,transparent_95%)]" />
-        <section className={`${section} bg-[radial-gradient(circle_at_0%_0%,rgba(255,255,255,1)_0%,transparent_60%),radial-gradient(circle_at_100%_100%,rgba(197,143,82,0.15)_0%,transparent_60%),linear-gradient(145deg,#faf8f5_0%,#e8e0d2_100%)] text-ink`} id="long-term">
-          <div className={shell}>
-            {/* Header with VKR Ventures branding */}
-            <Reveal className="mb-14 grid grid-cols-[minmax(0,1fr)_auto] gap-8 items-end max-md:grid-cols-1">
-              <div className="grid gap-5">
-                <div className="flex items-center gap-4 flex-wrap">
-                  <p className={`${label} text-ink/52`}>Long-Term Residential Rentals</p>
-                  <span className="h-px w-8 bg-ink/10 max-md:hidden" />
-                  <span className={`${label} text-ink/40`}>Operated by VKR Ventures</span>
-                </div>
-                <h2 className={`${title} max-w-[28ch]`}>
-                  Residential properties built for durable, lease-backed income.
-                </h2>
-                <p className={`${copy} text-ink/72 max-w-[42rem]`}>
-                  Our long-term rental portfolio targets neighborhood-driven housing
-                  in fast-growing Charlotte-region corridors — where tenant demand is
-                  strong, lease renewals are high, and property values appreciate steadily.
-                </p>
-              </div>
-
-              {/* VKR Ventures logo card */}
-              <div className="grid gap-3 justify-items-center text-center p-6 border border-ink/8 bg-white/60 backdrop-blur-[12px] shadow-[0_24px_50px_rgba(24,19,14,0.06)] transition duration-[420ms] hover:-translate-y-1 max-md:flex max-md:items-center max-md:justify-start max-md:p-4 max-md:text-left max-md:w-full max-md:gap-4 max-md:rounded-2xl">
-                <div className="w-28 h-28 flex items-center justify-center p-3 bg-background rounded-xl border border-ink/10 shadow-md max-md:w-16 max-md:h-16 max-md:p-1.5 max-md:shrink-0 max-md:rounded-lg">
-                  <img
-                    src="/images/vkr-ventures.jpeg"
-                    alt="VKR Ventures Logo"
-                    className="max-h-full max-w-full object-contain rounded-md opacity-90 transition-opacity hover:opacity-100"
-                  />
-                </div>
-                <div className="grid gap-0.5 max-md:gap-0">
-                  <span className="font-display text-lg font-bold text-ink max-md:text-base">VKR Ventures</span>
-                  <span className="text-[0.65rem] uppercase tracking-wider text-ink/60 max-md:text-[0.6rem]">Asset Management</span>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Content: Image + Details */}
-            <div className="grid grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 items-stretch max-xl:grid-cols-1">
-              <Reveal distance="left" className="grid">
-                <div className="overflow-hidden border border-ink/8 bg-paper shadow-[0_28px_60px_rgba(24,19,14,0.08)] transition duration-500 hover:shadow-xl">
-                  <img
-                    src="/images/section-ltr.png"
-                    alt="Modern townhomes in Charlotte metro area"
-                    className="h-full w-full object-cover transition duration-700 hover:scale-[1.03] max-md:h-64"
-                  />
-                </div>
-              </Reveal>
-
-              <Reveal className="grid grid-rows-[1fr_1fr_auto] gap-4" delay={120} distance="right">
-                {[
-                  {
-                    title: "Top School District Rentals",
-                    location: "Highly-rated educational zones",
-                    desc: "Single-family homes situated in Charlotte's most sought-after school districts, designed to attract long-term families and ensure community stability.",
-                  },
-                  {
-                    title: "Suburban Family Homes",
-                    location: "Greater Charlotte Area",
-                    desc: "Spacious residential properties located near parks and community centers, focusing on high tenant retention and steady asset appreciation.",
-                  },
-                ].map((property) => (
-                  <article
-                    key={property.title}
-                    className="border border-ink/8 bg-white/84 p-6 shadow-[0_28px_60px_rgba(24,19,14,0.08)] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 grid content-center gap-3"
-                  >
-                    <span className={`${label} text-ink/40`}>{property.location}</span>
-                    <h3 className="font-display text-[clamp(1.4rem,2.2vw,1.8rem)] leading-[1.1] tracking-[-0.03em] text-ink">
-                      {property.title}
-                    </h3>
-                    <p className={`${copy} text-ink/68`}>{property.desc}</p>
-                  </article>
-                ))}
-
-                <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
-                  {["Stable lease demand", "Durable finishes", "Long-term holds"].map((point) => (
-                    <span key={point} className="border border-ink/8 bg-white/60 px-4 py-3 text-center text-[0.78rem] uppercase tracking-[0.14em] text-ink/60">
-                      {point}
-                    </span>
-                  ))}
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════════════════════════════════════════════════════════════
-            SHORT-TERM RENTALS / NIRVANALUXE — Full independent section
-        ═══════════════════════════════════════════════════════════════ */}
-        <section className={`${section} bg-background text-foreground`} id="short-term">
-          <div className="absolute left-1/4 top-[15%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(197,143,82,0.08),transparent_60%)] blur-[40px] pointer-events-none" aria-hidden="true" />
-          <div className="absolute right-[10%] bottom-[10%] h-[20rem] w-[20rem] rounded-full bg-[radial-gradient(circle,rgba(197,143,82,0.06),transparent_70%)] blur-[30px] pointer-events-none" aria-hidden="true" />
-
-          <div className={shell}>
-            {/* Header with NirvanaLuxe branding */}
-            <Reveal className="mb-14 grid grid-cols-[minmax(0,1fr)_auto] gap-8 items-end max-md:grid-cols-1">
-              <div className="grid gap-5">
-                <div className="flex items-center gap-4 flex-wrap">
-                  <p className={`${label} text-accent`}>Short-Term Vacation Rentals</p>
-                  <span className="h-px w-8 bg-white/20 max-md:hidden" />
-                  <span className={`${label} text-paper/40`}>Operated by NirvanaLuxe</span>
-                </div>
-                <h2 className={`${title} max-w-[28ch] text-[#fff8ee]`}>
-                  Luxury vacation stays, curated for guests who expect more.
-                </h2>
-                <p className={`${copy} text-paper/70 max-w-[42rem]`}>
-                  Through our hospitality brand <strong className="text-[#fff8ee]">NirvanaLuxe</strong>,
-                  we operate premium vacation rentals across the Great Smoky Mountains and Lake Norman —
-                  with direct booking, dynamic pricing, and concierge-level guest care.
-                </p>
-              </div>
-
-              {/* NirvanaLuxe logo card */}
-              <div className="grid gap-3 justify-items-center text-center p-6 border border-white/12 bg-white/4 backdrop-blur-[12px] shadow-[0_24px_50px_rgba(0,0,0,0.22)] transition duration-[420ms] hover:-translate-y-1 max-md:flex max-md:items-center max-md:justify-start max-md:p-4 max-md:text-left max-md:w-full max-md:gap-4 max-md:rounded-2xl">
-                <div className="w-28 h-28 flex items-center justify-center p-3 bg-white rounded-xl border border-white/10 shadow-lg max-md:w-16 max-md:h-16 max-md:p-1.5 max-md:shrink-0 max-md:rounded-lg">
-                  <img
-                    src="/images/nirvanaluxe-logo.jpg"
-                    alt="NirvanaLuxe Logo"
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </div>
-                <div className="grid gap-0.5 max-md:gap-0">
-                  <span className="font-display text-lg font-bold text-[#fff8ee] max-md:text-base">NirvanaLuxe</span>
-                  <span className="text-[0.65rem] uppercase tracking-wider text-accent max-md:text-[0.6rem]">A VKR Ventures Brand</span>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Content: Image + Properties */}
-            <div className="grid grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 items-stretch max-xl:grid-cols-1">
-              <Reveal distance="left" className="grid">
-                <div className="overflow-hidden border border-white/12 bg-white/5 shadow-2xl transition duration-500 hover:border-white/20">
-                  <img
-                    src="/images/section-str.png"
-                    alt="Luxury mountain cabin in the Great Smoky Mountains"
-                    className="h-full w-full object-cover opacity-90 transition duration-700 hover:scale-[1.03] hover:opacity-100 max-md:h-64"
-                  />
-                </div>
-              </Reveal>
-
-              <Reveal className="grid grid-rows-[1fr_1fr_auto] gap-4" delay={120} distance="right">
-                {[
-                  {
-                    title: "Smoky Ridge Cabin Collection",
-                    location: "Sevierville & Gatlinburg corridor",
-                    desc: "Cabin inventory centered on family travel, shoulder-season durability, and guest experiences that support repeat demand.",
-                  },
-                  {
-                    title: "Charlotte Lakeside Retreats",
-                    location: "Lake Norman & Surrounding",
-                    desc: "Premium waterfront properties offering luxury amenities, seamless guest experiences, and year-round vacation appeal.",
-                  },
-                ].map((property) => (
-                  <article
-                    key={property.title}
-                    className={`${darkCard} p-6 grid content-center gap-3 transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1`}
-                  >
-                    <span className={`${label} text-paper/40`}>{property.location}</span>
-                    <h3 className="font-display text-[clamp(1.4rem,2.2vw,1.8rem)] leading-[1.1] tracking-[-0.03em] text-[#fff8ee]">
-                      {property.title}
-                    </h3>
-                    <p className={`${copy} text-paper/68`}>{property.desc}</p>
-                  </article>
-                ))}
-
-                <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
-                  {["Dynamic pricing", "Direct booking", "24/7 guest care"].map((point) => (
-                    <span key={point} className="border border-white/12 bg-white/4 px-4 py-3 text-center text-[0.78rem] uppercase tracking-[0.14em] text-paper/52">
-                      {point}
-                    </span>
-                  ))}
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        {/* ═══════ MARKETS ═══════ */}
-        <div className="h-px bg-[linear-gradient(90deg,transparent_5%,rgba(23,20,17,0.10)_30%,rgba(23,20,17,0.10)_70%,transparent_95%)]" />
-        <section id="markets" className={`${section} bg-[radial-gradient(ellipse_70%_50%_at_20%_80%,rgba(197,143,82,0.06),transparent_50%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.7),transparent_40%),linear-gradient(180deg,#f7f3ed_0%,#f2ece4_100%)] text-ink`}>
-          <div className={shell}>
-            <Reveal className="mb-10 flex items-end justify-between gap-8 max-xl:flex-col max-xl:items-start">
-              <div className="grid gap-4">
-                <p className={`${label} text-ink/52`}>Key Markets</p>
-                <h2 className={title}>Where we operate across both rental models.</h2>
-              </div>
-              <p className="max-w-96 leading-[1.8] text-ink/62">
-                The focus stays tied to real operating lanes across the Smokies, Charlotte, and
-                nearby growth corridors.
-              </p>
-            </Reveal>
-
-            <div className="grid grid-cols-4 gap-4 max-xl:grid-cols-2 max-md:grid-cols-1">
-              {guides.map((guide, index) => (
+            <div className="grid grid-cols-2 gap-5 max-lg:grid-cols-1">
+              {[
+                {
+                  eyebrow: "For buyers",
+                  title: "Find the right home—not just another listing.",
+                  copy: "Build a focused search, compare locations and property types, evaluate value, prepare a competitive offer, and move through inspections and closing with clear next steps.",
+                  points: ["Current property search", "Offer and negotiation strategy", "Transaction guidance"],
+                },
+                {
+                  eyebrow: "For sellers",
+                  title: "Position the property for a confident sale.",
+                  copy: "Use market evidence to set the pricing strategy, prepare the home for launch, manage buyer feedback, and negotiate terms with the full transaction in view.",
+                  points: ["Pricing consultation", "Photography and launch plan", "Contract-to-close support"],
+                },
+              ].map((item, index) => (
                 <Reveal
                   as="article"
-                  className="group relative grid min-h-[27rem] content-end overflow-hidden border border-ink/8 p-[1.35rem] shadow-[0_28px_60px_rgba(24,19,14,0.08)] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2 max-md:min-h-56"
+                  className="grid min-h-[31rem] content-between gap-10 border border-white/12 bg-white/[0.045] p-8 shadow-[0_28px_60px_rgba(0,0,0,0.16)] max-md:min-h-0 max-md:p-6"
                   delay={index * 110}
-                  key={guide.title}
+                  distance={index === 0 ? "left" : "right"}
+                  key={item.eyebrow}
                 >
-                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${guide.image}')` }} />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(7,6,5,0.52))]" />
-                  <div className="relative z-[1] grid gap-3 text-paper">
-                    <h3 className="font-display text-[clamp(2rem,3vw,2.8rem)] leading-[1.05] tracking-[-0.03em]">
-                      {guide.title}
-                    </h3>
-                    <p className={`${copy} text-paper/78`}>{guide.copy}</p>
+                  <div className="grid gap-5">
+                    <span className={`${label} text-accent`}>{item.eyebrow}</span>
+                    <h3 className="font-display text-[clamp(2rem,3.6vw,3.2rem)] leading-[0.98] tracking-[-0.04em] text-[#fff8ee]">{item.title}</h3>
+                    <p className={`${copy} text-paper/66`}>{item.copy}</p>
+                  </div>
+                  <div className="grid gap-3">
+                    {item.points.map((point) => (
+                      <span className="border-t border-white/12 pt-3 text-sm uppercase tracking-[0.12em] text-paper/55" key={point}>{point}</span>
+                    ))}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <ManagementSection services={managementServices} />
+
+        <section
+          className="hidden"
+          id="management-legacy"
+          style={{
+            background: "linear-gradient(180deg, #f6f1e8 0%, #fcfbf9 35%, #f6f1e8 100%)",
+            color: "#171411",
+          }}
+        >
+          {/* Subtle architectural ambient illumination */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-32 top-12 h-96 w-96 rounded-full bg-[#c58f52]/10 blur-[100px]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-20 bottom-10 h-96 w-96 rounded-full bg-[#c58f52]/10 blur-[90px]"
+          />
+
+          <div className={shell}>
+            {/* Header */}
+            <Reveal className="mb-14 grid max-w-[56rem] gap-5">
+              <div className="flex items-center gap-3">
+                <span
+                  className="inline-flex items-center gap-2 rounded-full border border-[#9b642e]/30 px-3.5 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.2em] text-[#8e531f]"
+                  style={{ backgroundColor: "rgba(197, 143, 82, 0.12)" }}
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#8e531f]" />
+                  Full-Service Management
+                </span>
+                <span className="text-[0.72rem] font-medium uppercase tracking-[0.16em] text-[#5c5044] hidden sm:inline">
+                  North Carolina Residential
+                </span>
+              </div>
+              <h2 className={`${title} text-balance text-[#171411]`}>
+                Hands-off property care with clear, flat-rate pricing.
+              </h2>
+              <p className={`${copy} max-w-[42rem] text-[#4d433b]`}>
+                Complete tenant placement, ongoing leasing operations, and 24/7 maintenance across
+                Charlotte, Concord, Lake Norman, Hickory, and surrounding communities.
+              </p>
+            </Reveal>
+
+            {/* Main Feature Grid */}
+            <div className="grid grid-cols-[0.88fr_1.12fr] items-stretch gap-8 max-xl:grid-cols-1">
+              {/* Left Column: Crisp Luxury White Pricing Card */}
+              <Reveal distance="left">
+                <div
+                  className="relative flex h-full flex-col justify-between overflow-hidden rounded-[2rem] border border-[#c58f52]/30 p-9 shadow-[0_24px_60px_rgba(24,19,14,0.08)] max-md:p-6"
+                  style={{ backgroundColor: "#ffffff", color: "#171411" }}
+                >
+                  {/* Subtle decorative inner corner glow */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-[#c58f52]/8 blur-2xl"
+                  />
+
+                  <div className="relative z-[1] grid gap-7">
+                    {/* Top Tier Header */}
+                    <div className="flex items-center justify-between gap-4 border-b border-[#171411]/10 pb-5">
+                      <span className="text-[0.7rem] font-bold uppercase tracking-[0.22em] text-[#8e531f]">
+                        Management Plan
+                      </span>
+                      <span
+                        className="rounded-full border border-[#171411]/12 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#4d433b]"
+                        style={{ backgroundColor: "#f6f1e8" }}
+                      >
+                        Flat Rate
+                      </span>
+                    </div>
+
+                    {/* Sculpted Price Lockup */}
+                    <div className="grid gap-2">
+                      <div className="flex items-baseline gap-1">
+                        <span className="font-display text-4xl font-light text-[#8e531f]">$</span>
+                        <strong className="font-display text-7xl font-bold tracking-tight text-[#171411] md:text-8xl">
+                          75
+                        </strong>
+                        <div className="ml-3 flex flex-col">
+                          <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#171411]">
+                            per month
+                          </span>
+                          <span className="text-[0.7rem] uppercase tracking-[0.14em] text-[#7a6b5e]">
+                            per unit flat fee
+                          </span>
+                        </div>
+                      </div>
+                      <p className="mt-1 text-sm leading-relaxed text-[#4d433b]">
+                        Simple, predictable monthly pricing. No percentage escalations on higher-rent homes.
+                      </p>
+                    </div>
+
+                    {/* Core Terms & Highlights */}
+                    <div className="grid gap-4 border-t border-[#171411]/10 pt-6">
+                      <div className="flex items-start gap-3.5">
+                        <span
+                          className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[0.7rem] font-bold text-[#8e531f]"
+                          style={{ backgroundColor: "rgba(197, 143, 82, 0.18)" }}
+                        >
+                          ✓
+                        </span>
+                        <div className="grid gap-0.5">
+                          <strong className="text-sm font-semibold text-[#171411]">
+                            No management fee until tenant is placed
+                          </strong>
+                          <span className="text-xs leading-relaxed text-[#5c5044]">
+                            Billing begins only when your property is leased and rent starts collecting.
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3.5">
+                        <span
+                          className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[0.7rem] font-bold text-[#8e531f]"
+                          style={{ backgroundColor: "rgba(197, 143, 82, 0.18)" }}
+                        >
+                          ✓
+                        </span>
+                        <div className="grid gap-0.5">
+                          <strong className="text-sm font-semibold text-[#171411]">
+                            Tenant placement: 50% of first month&apos;s rent
+                          </strong>
+                          <span className="text-xs leading-relaxed text-[#5c5044]">
+                            Covers photography, marketing syndication, broker showings, background vetting, and lease execution.
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3.5">
+                        <span
+                          className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full text-[0.7rem] font-bold text-[#8e531f]"
+                          style={{ backgroundColor: "rgba(197, 143, 82, 0.18)" }}
+                        >
+                          ✓
+                        </span>
+                        <div className="grid gap-0.5">
+                          <strong className="text-sm font-semibold text-[#171411]">
+                            Zero hidden repair markups
+                          </strong>
+                          <span className="text-xs leading-relaxed text-[#5c5044]">
+                            Maintenance and contractor invoices are passed through at 100% direct vendor cost.
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA Area */}
+                  <div className="relative z-[1] mt-9 grid gap-3 border-t border-[#171411]/10 pt-6">
+                    <Link
+                      className="group flex items-center justify-between rounded-full bg-[#171411] px-7 py-4 text-[0.78rem] font-semibold uppercase tracking-[0.18em] text-[#f4efe6] shadow-[0_14px_30px_rgba(23,20,17,0.18)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#2e261e]"
+                      href="/contact"
+                    >
+                      <span>Request a rental review</span>
+                      <span className="text-base transition-transform duration-300 group-hover:translate-x-1.5">
+                        →
+                      </span>
+                    </Link>
+                    <span className="text-center text-[0.72rem] text-[#7a6b5e]">
+                      Free rental valuation · No long-term lock-in
+                    </span>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Right Column: 8 Included Service Cards (Solid White, High Contrast) */}
+              <Reveal delay={100} distance="right">
+                <div className="flex h-full flex-col justify-between gap-4">
+                  <div className="flex items-center justify-between gap-4 px-1 pb-1">
+                    <div className="grid gap-0.5">
+                      <span className={`${label} text-[#7a6b5e]`}>Standard Inclusions</span>
+                      <h3 className="font-display text-2xl font-semibold tracking-tight text-[#171411]">
+                        Comprehensive management scope
+                      </h3>
+                    </div>
+                    <span
+                      className="rounded-full border border-[#171411]/12 px-3.5 py-1 text-xs font-semibold text-[#4d433b] shadow-xs"
+                      style={{ backgroundColor: "#ffffff" }}
+                    >
+                      8 essential services
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3.5 max-sm:grid-cols-1">
+                    {managementServices.map((service, index) => (
+                      <article
+                        className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#171411]/10 p-5 shadow-[0_6px_20px_rgba(24,19,14,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#8e531f]/50 hover:shadow-[0_16px_36px_rgba(24,19,14,0.09)]"
+                        key={service.title}
+                        style={{ backgroundColor: "#ffffff", color: "#171411" }}
+                      >
+                        <div className="flex items-center justify-between gap-2 pb-2.5">
+                          <span className="inline-flex items-center gap-2 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-[#8e531f]">
+                            <span
+                              className="grid h-7 w-7 place-items-center rounded-lg text-[#8e531f] transition-colors duration-300 group-hover:bg-[#8e531f] group-hover:text-white"
+                              style={{ backgroundColor: "rgba(197, 143, 82, 0.14)" }}
+                            >
+                              {service.icon}
+                            </span>
+                            {service.category}
+                          </span>
+                          <span className="font-display text-sm font-semibold text-[#171411]/30 transition-colors group-hover:text-[#8e531f]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                        </div>
+
+                        <div className="grid gap-1">
+                          <h4 className="text-[0.94rem] font-bold leading-[1.3] text-[#171411]">
+                            {service.title}
+                          </h4>
+                          <p className="text-[0.8rem] leading-[1.65] text-[#5c5044]">
+                            {service.description}
+                          </p>
+                        </div>
+
+                        <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#8e531f] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Bottom Trust & Assurance Ribbon */}
+            <div className="mt-12 grid grid-cols-3 gap-4 border-t border-[#171411]/10 pt-8 max-md:grid-cols-1">
+              <div
+                className="flex items-center gap-4 rounded-2xl border border-[#171411]/10 p-5 shadow-xs"
+                style={{ backgroundColor: "#ffffff", color: "#171411" }}
+              >
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#171411] text-[#c58f52] shadow-xs">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                  </svg>
+                </div>
+                <div className="grid gap-0.5">
+                  <strong className="text-xs uppercase tracking-[0.14em] text-[#171411] font-bold">NCREC Compliant</strong>
+                  <span className="text-xs text-[#5c5044]">Regulated and bonded client trust escrow accounts</span>
+                </div>
+              </div>
+
+              <div
+                className="flex items-center gap-4 rounded-2xl border border-[#171411]/10 p-5 shadow-xs"
+                style={{ backgroundColor: "#ffffff", color: "#171411" }}
+              >
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#171411] text-[#c58f52] shadow-xs">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="grid gap-0.5">
+                  <strong className="text-xs uppercase tracking-[0.14em] text-[#171411] font-bold">Licensed Brokerage</strong>
+                  <span className="text-xs text-[#5c5044]">Vinay R · NC Broker #346593</span>
+                </div>
+              </div>
+
+              <div
+                className="flex items-center gap-4 rounded-2xl border border-[#171411]/10 p-5 shadow-xs"
+                style={{ backgroundColor: "#ffffff", color: "#171411" }}
+              >
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#171411] text-[#c58f52] shadow-xs">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6H2.25m0 0v8.25m0-8.25h16.5m-16.5 0c0-.828.672-1.5 1.5-1.5h13.5c.828 0 1.5.672 1.5 1.5m0 0v8.25m0 0a2.25 2.25 0 01-2.25 2.25H4.5A2.25 2.25 0 012.25 14.25m16.5-6.75v6.75" />
+                  </svg>
+                </div>
+                <div className="grid gap-0.5">
+                  <strong className="text-xs uppercase tracking-[0.14em] text-[#171411] font-bold">Zero Hidden Fees</strong>
+                  <span className="text-xs text-[#5c5044]">Direct pass-through contractor pricing with no markups</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className={`${section} bg-[#122036] text-paper`} id="homes">
+          <div className={shell}>
+            <Reveal className="mb-10 flex items-end justify-between gap-8 max-lg:grid max-lg:items-start">
+              <div className="grid max-w-[45rem] gap-5">
+                <p className={`${label} text-accent`}>Homes for sale</p>
+                <h2 className={`${title} text-[#fff8ee]`}>Your North Carolina property search starts here.</h2>
+              </div>
+              <p className="max-w-[25rem] leading-[1.8] text-paper/62">
+                Browse current inventory through the Canopy participant IDX search, or request a tailored list for your priorities.
+              </p>
+            </Reveal>
+            <Reveal delay={80}>
+              <PropertySearch />
+            </Reveal>
+          </div>
+        </section>
+
+        <section className={`${section} bg-[#f6f1e9] text-ink`} id="areas">
+          <div className={shell}>
+            <Reveal className="mb-12 grid max-w-[50rem] gap-5">
+              <p className={`${label} text-ink/50`}>Nearby markets</p>
+              <h2 className={title}>A quick read on four North Carolina search areas.</h2>
+              <p className={`${copy} text-ink/65`}>
+                Broad market orientation only—without tying your search to a particular builder,
+                floor plan, or development.
+              </p>
+            </Reveal>
+
+            <div className="grid grid-cols-2 gap-5 max-lg:grid-cols-1">
+              {areas.map((area, index) => (
+                <Reveal
+                  as="article"
+                  className="group grid grid-cols-[0.78fr_1.22fr] overflow-hidden border border-ink/10 bg-white shadow-[0_24px_55px_rgba(24,19,14,0.08)] max-md:grid-cols-1"
+                  delay={index * 80}
+                  key={area.name}
+                >
+                  <div className="min-h-72 overflow-hidden max-md:min-h-52">
+                    <div className="h-full bg-cover bg-center transition duration-700 group-hover:scale-[1.035]" style={{ backgroundImage: `url('${area.image}')` }} />
+                  </div>
+                  <div className="grid content-between gap-8 p-6">
+                    <div className="grid gap-3">
+                      <h3 className="font-display text-[clamp(1.8rem,3vw,2.5rem)] leading-none tracking-[-0.035em]">{area.name}</h3>
+                      <p className="leading-[1.75] text-ink/65">{area.copy}</p>
+                    </div>
+                    <div className="grid gap-1 border-t border-ink/10 pt-4">
+                      <strong className="font-display text-2xl text-[#9b642e]">{area.price}</strong>
+                      <span className={`${label} text-ink/42`}>{area.context}</span>
+                    </div>
                   </div>
                 </Reveal>
               ))}
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-3 max-md:gap-2 max-md:justify-center">
-              {marketTape.map((item) => (
-                <span
-                  className="inline-flex items-center justify-center rounded-full border border-ink/10 bg-white/60 px-5 py-4 text-[0.78rem] uppercase tracking-[0.18em] text-ink/62 max-md:px-4 max-md:py-2.5 max-md:text-[0.65rem]"
-                  key={item}
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
+            <p className="mt-7 max-w-[58rem] text-xs leading-[1.8] text-ink/48">
+              Approximate figures are rounded from recent 2026 Canopy Realtor® Association / Canopy MLS monthly reports. Monthly medians change with the mix of homes sold and are not appraisals, forecasts, or quotes for a specific property.
+            </p>
+          </div>
+        </section>
+
+        <section className={`${section} bg-background text-paper`}>
+          <div className={shell}>
+            <Reveal className="grid grid-cols-[1fr_auto] items-end gap-10 border border-white/12 bg-white/[0.045] p-10 max-lg:grid-cols-1 max-md:p-6">
+              <div className="grid max-w-[48rem] gap-5">
+                <p className={`${label} text-accent`}>Let&apos;s talk property</p>
+                <h2 className={`${title} text-[#fff8ee]`}>Planning a sale, purchase, or management handoff?</h2>
+                <p className={`${copy} text-paper/65`}>Share the property or search area and VKR Ventures will help you map the next step.</p>
+              </div>
+              <Link className={primaryButton} href="/contact">Start a conversation</Link>
+            </Reveal>
           </div>
         </section>
       </main>
 
-      {/* ═══════ FOOTER ═══════ */}
-      <footer className="relative bg-[radial-gradient(ellipse_80%_50%_at_20%_60%,rgba(197,143,82,0.13),transparent_50%),radial-gradient(circle_at_top_right,rgba(197,143,82,0.22),transparent_34%),radial-gradient(ellipse_60%_40%_at_80%_90%,rgba(160,120,70,0.1),transparent_50%),linear-gradient(180deg,#1e1914_0%,#171310_40%,#12100d_100%)] px-0 py-28 pb-8 text-foreground max-md:py-20">
-        <div className={shell}>
-          <div className="grid grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] items-start gap-12 max-xl:grid-cols-1">
-            <div className="grid gap-8">
-              <Reveal className="grid gap-6" distance="left">
-                <p className={`${label} text-paper/46`}>Connect</p>
-                <h2 className={`${title} max-w-[40ch] text-[#fff8ee]`}>
-                  Looking at a rental opportunity in Tennessee or North Carolina?
-                </h2>
-                <p className={`${copy} max-w-[38rem] text-paper/70`}>
-                  Whether it is a long-term hold in the Charlotte metro or a vacation rental
-                  in the Smokies — if it fits the focus, the details below are the right place to start.
-                </p>
-              </Reveal>
-
-              <Reveal className="grid content-start" distance="left">
-                <div className={`${darkCard} grid gap-5 p-6`}>
-                  <span className={`${label} text-paper/48`}>Best fit</span>
-                  <div className="grid gap-3">
-                    {[
-                      "Short-term vacation rentals in Tennessee and North Carolina — via NirvanaLuxe",
-                      "Long-term residential rentals in the Greater Charlotte Area",
-                    ].map((field) => (
-                      <span
-                        className="border border-white/12 bg-white/3 px-[1.1rem] py-4 text-paper/72"
-                        key={field}
-                      >
-                        {field}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap justify-center gap-4 max-md:w-full">
-                    <Link className={primaryButton} href="/contact">
-                      Open contact page
-                    </Link>
-                    <a className={secondaryButton} href="#markets">
-                      Review markets
-                    </a>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-
-            <Reveal className="grid gap-4 content-start" delay={120} distance="right">
-              {[
-                {
-                  label: "Tennessee Address",
-                  value: "109 Parkway Suite 4C",
-                  detail: "Sevierville, TN 37862",
-                },
-                {
-                  label: "Charlotte Address",
-                  value: "2357 Herrons Nest Pl NW",
-                  detail: "Concord, NC 28027",
-                },
-                {
-                  label: "Focus",
-                  value: "Short-term and long-term rentals",
-                  detail: "Properties selected for location strength, operating fit, and hold quality",
-                },
-              ].map((card) => (
-                <div
-                  className={`${darkCard} grid gap-[0.55rem] p-[1.4rem] transition duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-2`}
-                  key={card.label}
-                >
-                  <span className={`${label} text-paper/44`}>{card.label}</span>
-                  <strong className="font-display text-[clamp(1.35rem,2.2vw,2.1rem)] leading-[1.05] tracking-[-0.03em] text-[#fff8ee]">
-                    {card.value}
-                  </strong>
-                  <span className="leading-[1.8] text-paper/66">{card.detail}</span>
-                </div>
-              ))}
-            </Reveal>
+      <footer className="border-t border-white/10 bg-[#090807] py-10 text-paper">
+        <div className={`${shell} grid grid-cols-[1fr_auto] gap-8 max-md:grid-cols-1`}>
+          <div className="grid gap-2">
+            <strong className="font-display text-2xl text-[#fff8ee]">VKR Ventures LLC</strong>
+            <span className="text-sm text-paper/52">North Carolina real estate sales &amp; property management</span>
           </div>
-
-          <div className="mt-12 flex flex-wrap gap-x-6 gap-y-4 border-t border-white/12 pt-8 text-[0.78rem] uppercase tracking-[0.18em] text-paper/46">
-            <span>VKR Ventures LLC</span>
-            <span>NirvanaLuxe — Vacation Rentals</span>
-            <span>Sevierville, Tennessee</span>
-            <span>Charlotte region</span>
+          <div className="grid justify-items-end gap-2 text-sm text-paper/62 max-md:justify-items-start">
+            <a href="tel:19728359376">+1 972 835 9376</a>
+            <a href="mailto:vinay@vkr-ventures.com">vinay@vkr-ventures.com</a>
+            <span>Vinay R · NC Broker #346593</span>
           </div>
+          <p className="col-span-full border-t border-white/10 pt-6 text-xs leading-relaxed text-paper/38 max-md:col-span-1">
+            Equal Housing Opportunity. Information on this website is for general marketing purposes and is subject to change. Fees and services are confirmed in the signed brokerage or property-management agreement.
+          </p>
         </div>
       </footer>
     </div>

@@ -66,13 +66,13 @@ export function SiteNav({ brandHref, items }: SiteNavProps) {
           <div className="flex items-center justify-between gap-4 max-md:w-full">
             <Link className="inline-flex items-center z-50" href={brandHref} onClick={closeMenu}>
               <Image
-                alt="VKR Ventures"
-                className="h-10 w-auto md:h-[4.2rem] rounded-lg mix-blend-screen opacity-90 transition-opacity hover:opacity-100"
-                height={408}
+                alt="VKR Ventures logo"
+                className="h-12 w-auto object-contain md:h-16"
+                height={483}
                 priority
-                sizes="(max-width: 767px) 110px, 156px"
-                src="/images/vkr-ventures.jpeg"
-                width={612}
+                sizes="(max-width: 767px) 152px, 204px"
+                src="/images/vkr-ventures-logo.png"
+                width={1534}
               />
               <span className="sr-only">VKR Ventures</span>
             </Link>
@@ -147,4 +147,3 @@ export function SiteNav({ brandHref, items }: SiteNavProps) {
     </>
   );
 }
-

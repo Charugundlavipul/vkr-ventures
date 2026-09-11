@@ -19,9 +19,10 @@ const emailJsConfig = {
 };
 
 const serviceLabels = {
-  both: "Short-term and long-term property management",
-  "long-term": "Long-term property management",
-  "short-term": "Short-term property management",
+  buy: "Buy a North Carolina property",
+  sell: "Sell a North Carolina property",
+  management: "Full-service property management",
+  placement: "Tenant placement",
 } as const;
 
 type StatusTone = "error" | "idle" | "success";
@@ -63,8 +64,12 @@ export function ContactInquiryForm({ compact = false, hideService = false }: { c
       .map(([key]) => key);
 
     if (missingConfig.length > 0) {
+      console.error("Contact form is missing required EmailJS configuration", {
+        missingConfig,
+      });
       setStatus({
-        message: `Email sending is not configured yet. Missing: ${missingConfig.join(", ")}`,
+        message:
+          "We could not process your message right now. Please email us directly at vinay@vkr-ventures.com or call +1 972 835 9376.",
         tone: "error",
       });
       return;
@@ -259,9 +264,10 @@ export function ContactInquiryForm({ compact = false, hideService = false }: { c
                 <option value="" disabled>
                   Select a service
                 </option>
-                <option value="short-term">Short-term property management</option>
-                <option value="long-term">Long-term property management</option>
-                <option value="both">Both</option>
+                <option value="buy">Buy a property</option>
+                <option value="sell">Sell a property</option>
+                <option value="management">Property management</option>
+                <option value="placement">Tenant placement</option>
               </select>
               <span className="pointer-events-none absolute right-5 top-1/2 h-[0.55rem] w-[0.55rem] -translate-y-[60%] rotate-45 border-b-[1.5px] border-r-[1.5px] border-ink/54" />
             </div>

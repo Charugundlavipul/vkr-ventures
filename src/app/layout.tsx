@@ -15,9 +15,9 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "VKR Ventures | Tennessee and North Carolina Rental Ventures",
+  title: "VKR Ventures | North Carolina Real Estate & Property Management",
   description:
-    "VKR Ventures LLC focuses on short-term and long-term rental opportunities across Tennessee and North Carolina.",
+    "North Carolina home sales, buyer representation, and full-service residential property management across Charlotte and nearby markets.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
