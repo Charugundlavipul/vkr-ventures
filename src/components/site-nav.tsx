@@ -61,7 +61,7 @@ export function SiteNav({ brandHref, items }: SiteNavProps) {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 border-b border-white/12 bg-background/60 backdrop-blur-[22px] transition-all">
+      <nav className="fixed top-0 left-0 w-full z-50 border-b border-white/12 bg-background/85 backdrop-blur-[22px] transition-all">
         <div className={cn(shell, "flex items-center justify-between gap-8 py-2 max-md:py-2.5")}>
           <div className="flex items-center justify-between gap-4 max-md:w-full">
             <Link className="inline-flex items-center z-50" href={brandHref} onClick={closeMenu}>
