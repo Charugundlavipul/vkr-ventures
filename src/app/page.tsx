@@ -214,16 +214,75 @@ export default function Home() {
                   through positioning and negotiations, and supports rental owners after closing.
                   The goal is simple: clear advice, responsive execution, and fewer handoffs.
                 </p>
-                <div className="grid grid-cols-3 gap-px overflow-hidden border border-ink/10 bg-ink/10 max-md:grid-cols-1">
+                <div className="mt-2 grid grid-cols-3 gap-3.5 max-md:grid-cols-1">
                   {[
-                    ["Buy", "Search and offer strategy"],
-                    ["Sell", "Pricing and presentation"],
-                    ["Manage", "Leasing through operations"],
-                  ].map(([heading, detail]) => (
-                    <div className="grid gap-2 bg-white/80 p-5" key={heading}>
-                      <strong className="font-display text-2xl">{heading}</strong>
-                      <span className="text-sm leading-relaxed text-ink/60">{detail}</span>
-                    </div>
+                    {
+                      step: "01",
+                      heading: "Buy",
+                      detail: "Search and offer strategy",
+                      href: "#homes",
+                      cta: "Browse homes",
+                      icon: (
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      step: "02",
+                      heading: "Sell",
+                      detail: "Pricing and presentation",
+                      href: "#sales",
+                      cta: "Seller approach",
+                      icon: (
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      step: "03",
+                      heading: "Manage",
+                      detail: "Leasing through operations",
+                      href: "#management",
+                      cta: "View services",
+                      icon: (
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+                        </svg>
+                      ),
+                    },
+                  ].map((pillar) => (
+                    <a
+                      className="group relative flex flex-col justify-between gap-5 overflow-hidden border border-ink/10 bg-white p-5 shadow-[0_10px_30px_rgba(24,19,14,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9b642e]/45 hover:shadow-[0_18px_40px_rgba(24,19,14,0.1)]"
+                      href={pillar.href}
+                      key={pillar.heading}
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="absolute inset-x-0 top-0 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-[#9b642e] via-[#c58f52] to-transparent transition-transform duration-300 group-hover:scale-x-100"
+                      />
+                      <div className="flex items-center justify-between">
+                        <span className="grid h-8 w-8 place-items-center border border-[#9b642e]/25 bg-[#c58f52]/10 text-[#9b642e] transition-colors duration-300 group-hover:bg-[#9b642e] group-hover:text-white">
+                          {pillar.icon}
+                        </span>
+                        <span className="font-display text-sm font-medium tracking-[0.14em] text-ink/35 transition-colors group-hover:text-[#9b642e]">
+                          {pillar.step}
+                        </span>
+                      </div>
+                      <div className="grid gap-1.5">
+                        <strong className="font-display text-[1.75rem] leading-none tracking-[-0.02em] text-ink">
+                          {pillar.heading}
+                        </strong>
+                        <span className="text-sm leading-relaxed text-ink/62">{pillar.detail}</span>
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 border-t border-ink/8 pt-3 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#9b642e]">
+                        <span>{pillar.cta}</span>
+                        <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+                          &rarr;
+                        </span>
+                      </span>
+                    </a>
                   ))}
                 </div>
               </Reveal>
