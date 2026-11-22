@@ -56,21 +56,20 @@ export function ManagementSection({ services }: ManagementSectionProps) {
 
         <div className="grid grid-cols-[0.82fr_1.18fr] overflow-hidden border border-white/10 bg-[#122036] text-[#f4efe6] shadow-[0_30px_70px_rgba(18,32,54,0.2)] max-lg:grid-cols-1">
           <div className="grid content-start gap-10 border-r border-white/12 p-10 max-lg:border-b max-lg:border-r-0 max-md:p-6">
-            <div className="grid">
-              <span className={`${label} text-[#c58f52]`}>Management starts at</span>
-              <div className="mt-0 flex items-end gap-2 pb-10">
-                <span className="mb-4 font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-none text-[#c58f52]">$</span>
+            <div className="grid gap-5">
+              <span className={`${label} text-[#c58f52]`}>Introductory offer</span>
+              <div className="pb-2">
                 <strong
-                  className="block font-display font-medium tracking-[-0.08em] text-[#e0ad68]"
-                  style={{ fontSize: "clamp(7rem, 13vw, 10rem)", lineHeight: 0.72 }}
+                  className="block font-display font-medium tracking-[-0.05em] text-[#e0ad68]"
+                  style={{ fontSize: "clamp(3.25rem, 6vw, 4.75rem)", lineHeight: 0.94 }}
                 >
-                  75
+                  First 3 Months Free
                 </strong>
               </div>
               <div className="grid gap-3">
-                <strong className="text-lg text-[#fff8ee]">Per unit, per month</strong>
+                <strong className="text-lg text-[#fff8ee]">Full-service residential management</strong>
                 <p className="max-w-[27rem] text-sm leading-[1.75] text-[#f4efe6]/62">
-                  Predictable pricing with no percentage increase on higher-rent homes.
+                  Get started with zero monthly management fees for your first three months.
                 </p>
               </div>
             </div>

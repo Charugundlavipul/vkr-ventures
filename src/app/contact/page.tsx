@@ -77,7 +77,7 @@ export default function ContactPage() {
               <div className={`${card} grid gap-4 p-7 max-md:p-5`}>
                 <p className={`${label} text-ink/48`}>Management highlights</p>
                 {[
-                  "From $75 per month per unit",
+                  "First 3 months free",
                   "50% of first month's rent for tenant placement",
                   "No monthly management fee until a tenant is placed",
                 ].map((note) => (

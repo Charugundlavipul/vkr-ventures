@@ -352,24 +352,13 @@ export default function Home() {
                       </span>
                     </div>
 
-                    {/* Sculpted Price Lockup */}
+                    {/* Sculpted Offer Lockup */}
                     <div className="grid gap-2">
-                      <div className="flex items-baseline gap-1">
-                        <span className="font-display text-4xl font-light text-[#8e531f]">$</span>
-                        <strong className="font-display text-7xl font-bold tracking-tight text-[#171411] md:text-8xl">
-                          75
-                        </strong>
-                        <div className="ml-3 flex flex-col">
-                          <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#171411]">
-                            per month
-                          </span>
-                          <span className="text-[0.7rem] uppercase tracking-[0.14em] text-[#7a6b5e]">
-                            per unit flat fee
-                          </span>
-                        </div>
-                      </div>
+                      <strong className="font-display text-5xl font-bold leading-[0.95] tracking-tight text-[#171411] md:text-6xl">
+                        First 3 Months Free
+                      </strong>
                       <p className="mt-1 text-sm leading-relaxed text-[#4d433b]">
-                        Simple, predictable monthly pricing. No percentage escalations on higher-rent homes.
+                        Get started with zero monthly management fees for your first three months.
                       </p>
                     </div>
 
