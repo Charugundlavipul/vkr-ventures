@@ -6,7 +6,7 @@ const idxUrl =
 
 export function PropertySearch() {
   return (
-    <div className="overflow-hidden border border-white/12 bg-white shadow-[0_28px_70px_rgba(0,0,0,0.25)]">
+    <div className="mx-auto w-full max-w-[1020px] overflow-hidden border border-white/12 bg-white shadow-[0_28px_70px_rgba(0,0,0,0.25)]">
       <div className="flex items-center justify-between gap-8 border-b border-ink/10 bg-[#f6f1e9] px-6 py-5 text-ink max-md:grid max-md:gap-4 max-md:px-4">
         <div className="grid gap-1">
           <strong className="font-display text-2xl leading-none">Narrow your search to see every match.</strong>
